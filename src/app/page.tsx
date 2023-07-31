@@ -5,7 +5,7 @@ import Header from "./components/header/page";
 const page = () => {
 	return (
 		<>
-			<header>
+			<header className="py-6 -mx-2 px-2">
 				<Header />
 			</header>
 			<main></main>
