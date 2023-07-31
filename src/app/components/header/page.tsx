@@ -4,7 +4,7 @@ import React from "react";
 
 const page = () => {
 	return (
-		<div className="container flex justify-between items-center">
+		<div className="container flex  flex-col md:flex-row md:gap-0 gap-5 justify-between items-center">
 			<div>
 				<Link href="/">
 					<Image
