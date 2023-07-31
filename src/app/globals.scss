@@ -4,8 +4,6 @@
 
 html,
 body {
-	font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-		Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 	font-size: 16px;
 }
 
@@ -17,8 +15,9 @@ body {
 
 header {
 	position: fixed;
-	left: 0;
+	left: 50%;
 	top: 0;
+	transform: translate(-50%);
 	width: 100%;
 	background-color: #19191980;
 }
@@ -26,8 +25,11 @@ header {
 .container {
 	margin: 0px auto;
 	@media (min-width: 768px) {
-		max-width: 1140px !important;
+		max-width: 1200px !important;
 	}
+}
+
+main {
 }
 
 a {
@@ -44,5 +46,12 @@ a {
 			transform: scale(1.1);
 			transition: all 0.3s ease 0s;
 		}
+	}
+}
+
+#hero {
+	margin: 0px -30px;
+	img {
+		filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.25));
 	}
 }

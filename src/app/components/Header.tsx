@@ -3,10 +3,10 @@ import Link from "next/link";
 
 const page = () => {
 	return (
-		<header className="py-6 -mx-2 px-2 text-white/80">
+		<header className="py-6 text-white/80 container">
 			<div className="container flex  flex-col md:flex-row md:gap-0 gap-5 justify-between items-center">
 				<div>
-					<Link href="/">
+					<Link className="hover:transform hover:scale-0" href="/">
 						<Image
 							src="/img/header/logobg.png"
 							alt="logo"
