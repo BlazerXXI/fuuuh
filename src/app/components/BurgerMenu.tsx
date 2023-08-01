@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 
 interface BurgerMenuProps {}
 
@@ -12,6 +12,23 @@ const BurgerMenu: React.FC<BurgerMenuProps> = () => {
 		setIsOpen(!isOpen);
 	};
 
+	const handleClickOutside = (event: MouseEvent) => {
+		if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+			setIsOpen(false);
+		}
+	};
+
+	useEffect(() => {
+		if (isOpen) {
+			document.addEventListener("click", handleClickOutside);
+		} else {
+			document.removeEventListener("click", handleClickOutside);
+		}
+		return () => {
+			document.removeEventListener("click", handleClickOutside);
+		};
+	}, [isOpen]);
+
 	return (
 		<div ref={menuRef}>
 			<button
@@ -20,7 +37,7 @@ const BurgerMenu: React.FC<BurgerMenuProps> = () => {
 			>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
-					className="h-6 w-6 text-gray-600"
+					className="h-6 w-6 text-gray-600 duration-300 animate-pulse"
 					fill="none"
 					viewBox="0 0 24 24"
 					stroke="currentColor"

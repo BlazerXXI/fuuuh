@@ -10,7 +10,7 @@ const page = () => {
 				<div>
 					<Link className="hover:transform hover:scale-0" href="/">
 						<Image
-							className="sm:w-[247px] w-full"
+							className="sm:w-[247px] w-full logo"
 							src="/img/header/logobg.png"
 							alt="logo"
 							width={247}
