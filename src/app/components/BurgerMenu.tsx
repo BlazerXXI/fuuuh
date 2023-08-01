@@ -75,7 +75,7 @@ const BurgerMenu: React.FC<BurgerMenuProps> = () => {
 						</Link>
 					</nav>
 					<div className="flex gap-4 justify-center">
-						<Link href="#">
+						<Link target="_blank" href="https://www.instagram.com/fuuuh_bar/">
 							<Image
 								src="/img/header/social/instagram.svg"
 								width={24}
@@ -83,7 +83,7 @@ const BurgerMenu: React.FC<BurgerMenuProps> = () => {
 								alt="instagram"
 							/>
 						</Link>
-						<Link href="#">
+						<Link target="_blank" href="#">
 							<Image
 								src="/img/header/social/location.svg"
 								width={24}
@@ -91,7 +91,7 @@ const BurgerMenu: React.FC<BurgerMenuProps> = () => {
 								alt="location dot"
 							/>
 						</Link>
-						<Link href="#">
+						<Link target="_blank" href="#">
 							<Image
 								src="/img/header/social/phone.svg"
 								width={24}

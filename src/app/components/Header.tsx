@@ -32,7 +32,7 @@ const page = () => {
 					</Link>
 				</nav>
 				<div className="hidden md:flex gap-7">
-					<Link href="#">
+					<Link target="_blank" href="https://www.instagram.com/fuuuh_bar/">
 						<Image
 							src="/img/header/social/instagram.svg"
 							width={24}
@@ -40,7 +40,7 @@ const page = () => {
 							alt="instagram"
 						/>
 					</Link>
-					<Link href="#">
+					<Link target="_blank" href="#">
 						<Image
 							src="/img/header/social/location.svg"
 							width={24}
@@ -48,7 +48,7 @@ const page = () => {
 							alt="location dot"
 						/>
 					</Link>
-					<Link href="#">
+					<Link target="_blank" href="#">
 						<Image
 							src="/img/header/social/phone.svg"
 							width={24}

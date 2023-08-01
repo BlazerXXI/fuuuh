@@ -1,6 +1,6 @@
 import Hero from "./components/Hero";
 import "./globals.scss";
-import Food from "./pages/Food/Food";
+import Food from "./pages/Food";
 
 const page = () => {
 	return (

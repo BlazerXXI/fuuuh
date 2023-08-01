@@ -1,4 +1,3 @@
-import { strict } from "assert";
 import Image from "next/image";
 
 const Food = () => {
