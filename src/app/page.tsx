@@ -1,13 +1,11 @@
-import Hero from "./components/Hero";
+import Food from "./food/page";
 import "./globals.scss";
-import Food from "./pages/Food";
 
 const page = () => {
 	return (
-		<main>
-			<Hero />
+		<>
 			<Food />
-		</main>
+		</>
 	);
 };
 

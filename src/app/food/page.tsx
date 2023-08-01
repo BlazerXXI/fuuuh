@@ -50,7 +50,7 @@ const Food = () => {
 							{item.src ? (
 								<div>
 									<Image
-										className="rounded-lg"
+										className="rounded-lg zoom-image"
 										src={item.src}
 										alt={`блюдо` + " " + item.title}
 										width={240}

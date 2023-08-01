@@ -20,7 +20,7 @@ const page = () => {
 				</div>
 				<BurgerMenu />
 				<nav className="hidden md:flex gap-7 text-lg items-stretch">
-					<Link href="/food" className="underline">
+					<Link href="../pages/food" className="underline">
 						Їжа
 					</Link>
 					<Link href="/bar" className="flex flex-col underline">
