@@ -5,7 +5,7 @@ const Hero = () => {
 	return (
 		<section id="hero">
 			<Image
-				className="object-cover w-full h-[30vh]"
+				className="object-cover w-full h-[30vh] sm:h-full"
 				src={"/img/hero/heroBg.png"}
 				width={1200}
 				height={335}
