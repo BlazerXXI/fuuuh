@@ -4,13 +4,17 @@
 
 html,
 body {
+	color: #ffffffcf;
 	font-size: 16px;
 }
 
 body {
 	background-color: #191919;
-	color: #ffffff80;
+	color: #ffffffcf;
 	padding: 120px 30px 0px 30px;
+	@media (max-width: 640px) {
+		padding: 45px 15px 0px 15px;
+	}
 }
 
 header {
@@ -19,7 +23,12 @@ header {
 	top: 0;
 	transform: translate(-50%);
 	width: 100%;
-	background-color: #19191980;
+	background-color: #191919f0;
+	z-index: 2;
+	padding: 0px 30px 0px 30px;
+	@media (max-width: 640px) {
+		padding: 0px 15px 0px 15px;
+	}
 }
 
 .container {
@@ -27,9 +36,6 @@ header {
 	@media (min-width: 768px) {
 		max-width: 1200px !important;
 	}
-}
-
-main {
 }
 
 a {
@@ -51,7 +57,51 @@ a {
 
 #hero {
 	margin: 0px -30px;
+	@media (max-width: 768px) {
+		margin: 0 -15px;
+	}
 	img {
 		filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.25));
+	}
+}
+
+.title-section {
+	font-size: 40px;
+	font-weight: 700;
+	margin-top: 40px;
+	&::after {
+		content: "";
+		display: block;
+		height: 1px;
+		background: rgba(255, 255, 255, 0.13);
+		margin-top: 12px;
+	}
+}
+
+.sub-title-section {
+	font-size: 30px;
+	font-style: italic;
+	font-weight: 600;
+	background: #522e2a;
+	display: inline-flex;
+	margin-top: 40px;
+}
+
+.card-border {
+	border-radius: 8px;
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	box-shadow: 0px 3px 15px 0px rgba(255, 255, 255, 0.25);
+	animation: floating 3s infinite ease-in-out;
+}
+
+@keyframes floating {
+	0% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(-3px);
+	}
+	100% {
+		transform: translateY(0);
 	}
 }

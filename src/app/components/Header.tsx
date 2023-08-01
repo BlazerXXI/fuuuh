@@ -1,13 +1,16 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
+import BurgerMenu from "./BurgerMenu";
 
 const page = () => {
 	return (
-		<header className="py-6 text-white/80 container">
-			<div className="container flex  flex-col md:flex-row md:gap-0 gap-5 justify-between items-center">
+		<header className="md:py-6 py-1 text-white/80 container">
+			<div className="container flex flex-row md:gap-0 gap-5 justify-between items-center">
 				<div>
 					<Link className="hover:transform hover:scale-0" href="/">
 						<Image
+							className="sm:w-[247px] w-full"
 							src="/img/header/logobg.png"
 							alt="logo"
 							width={247}
@@ -15,9 +18,9 @@ const page = () => {
 						/>
 					</Link>
 				</div>
-				<nav className="flex gap-7 text-lg items-stretch">
+				<BurgerMenu />
+				<nav className="hidden md:flex gap-7 text-lg items-stretch">
 					<Link href="/food" className="underline">
-						{" "}
 						Їжа
 					</Link>
 					<Link href="/bar" className="flex flex-col underline">
@@ -25,11 +28,10 @@ const page = () => {
 						<span className="text-xs opacity-60">кальян / попкорн</span>
 					</Link>
 					<Link href="/pets" className="underline">
-						{" "}
 						Меню для маленьких друзів
 					</Link>
 				</nav>
-				<div className="flex gap-7">
+				<div className="hidden md:flex gap-7">
 					<Link href="#">
 						<Image
 							src="/img/header/social/instagram.svg"
