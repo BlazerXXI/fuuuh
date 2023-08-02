@@ -13,7 +13,7 @@ body {
 	color: #ffffffcf;
 	padding: 120px 30px 0px 30px;
 	@media (max-width: 640px) {
-		padding: 45px 15px 0px 15px;
+		padding: 56px 15px 0px 15px;
 	}
 }
 
@@ -77,6 +77,7 @@ a {
 		margin-top: 12px;
 	}
 	@media (max-width: 768px) {
+		font-size: 32px;
 	}
 }
 
@@ -87,6 +88,9 @@ a {
 	background: #522e2a;
 	display: inline-flex;
 	margin-top: 40px;
+	@media (max-width: 768px) {
+		font-size: 24px;
+	}
 }
 
 .card-border {
@@ -102,15 +106,21 @@ a {
 @keyframes floating {
 	0% {
 		transform: translateY(0);
-		box-shadow: 0px 3px 15px 0px rgba(255, 255, 255, 0.25);
+		box-shadow: 0px 3px 5px 0px 10px rgba(255, 255, 255, 0.5);
+	}
+	25% {
+		box-shadow: 0px 3px 10px 0px 10px rgba(255, 255, 255, 0.75);
 	}
 	50% {
 		transform: translateY(8px);
-		box-shadow: 0px 3px 15px 0px rgba(255, 255, 255, 0.5);
+		box-shadow: 0px 3px 5px 0px 10px rgba(255, 255, 255, 0.5);
+	}
+	75% {
+		box-shadow: 0px 3px 10px 0px 10px rgba(255, 255, 255, 0.75);
 	}
 	100% {
 		transform: translateY(0);
-		box-shadow: 0px 3px 15px 0px rgba(255, 255, 255, 0.25);
+		box-shadow: 0px 3px 5px 0px 10px rgba(255, 255, 255, 0.5);
 	}
 }
 

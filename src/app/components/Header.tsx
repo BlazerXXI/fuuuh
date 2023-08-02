@@ -5,7 +5,7 @@ import BurgerMenu from "./BurgerMenu";
 
 const page = () => {
 	return (
-		<header className="md:py-6 py-1 text-white/80 container">
+		<header className="md:py-6 py-2 text-white/80 container">
 			<div className="container flex flex-row md:gap-0 gap-5 justify-between items-center">
 				<div>
 					<Link className="hover:transform hover:scale-0" href="/">
