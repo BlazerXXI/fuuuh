@@ -1,67 +1,88 @@
+"use client";
 import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
 
 const Bar = () => {
-	const menuItems = [
+	const bar = [
 		{
-			src: "/img/breakfast/syrnik.jpeg",
-			title: "BAR",
-			price: "155",
-			description:
-				"Ці сирники готуються у духовці . Подаються зі сметаною та варенням і є чудовим вибором для тих, хто любить солодкий сніданок.",
-		},
-		{
-			src: "/img/breakfast/lenivy.jpeg",
-			title: "Ліниві вареники із згущеним молоком",
-			price: "145",
-			description:
-				"Ліниві вареники з згущеним молоком - це ситний і смачний варіант для сніданку або легкого обіду.",
-		},
-		{
-			src: "/img/breakfast/omlet.jpeg",
-			title: "Омлет з лососем, авокадо та моцареллою",
-			price: "190",
-			description:
-				"Омлет з авокадо - це страва, яка додасть вам енергії та ситості на початку дня. ",
-		},
-		{
-			src: "/img/breakfast/omlet.jpeg",
-			title: "Омлет з сиром, куркою та грибами",
-			price: "180",
-			description:
-				"Ситний та поживний сніданок, з підсмаженою курочкою та зеленню.",
+			src: "",
+			title: "Bar",
+			price: "210",
+			description: "",
 		},
 	];
 
+	const [isZoomed, setIsZoomed] = useState(new Array(bar.length).fill(false));
+	const handleImageClick = (index: number) => {
+		setIsZoomed((prev) =>
+			prev.map((value, i) => (i === index ? !prev[i] : false))
+		);
+	};
+	const zoomedImageRef = useRef<HTMLDivElement>(null);
+
+	useEffect(() => {
+		const handleClickOutside = (event: MouseEvent) => {
+			if (!event.target) return;
+			const targetElement = event.target as HTMLElement;
+			if (
+				!zoomedImageRef.current?.contains(targetElement) &&
+				isZoomed.some((value) => value)
+			) {
+				setIsZoomed(new Array(bar.length).fill(false));
+			}
+		};
+
+		document.addEventListener("click", handleClickOutside);
+
+		return () => {
+			document.removeEventListener("click", handleClickOutside);
+		};
+	}, [isZoomed, bar.length]);
 	return (
-		<section id="bar">
+		<div>
 			<div>
-				<h2 className="title-section">Їжа</h2>
-			</div>
-			<div>
-				<h3 className="sub-title-section">Сніданки (весь день)</h3>
+				<h3 className="sub-title-section">Попкорн 🍿</h3>
 			</div>
 			<ul className="grid md:grid-cols-2 lg:grid-cols-4 md:mt-12 mt-7 gap-16">
-				{menuItems.map((item, index) => (
+				{bar.map((item, index) => (
 					<li
 						className="text-center flex flex-col items-center justify-content-center "
 						key={index}
 					>
 						<div className="max-w-[240px] card-border flex flex-col grow gap-5">
 							{item.src ? (
-								<div>
+								<div
+									ref={zoomedImageRef}
+									className="w-[240px] h-[320px] z-20 flex flex-col align-items-center justify-center"
+								>
 									<Image
-										className="rounded-lg"
+										onClick={() => handleImageClick(index)}
+										className={`rounded-lg object-cover ${
+											isZoomed[index] ? "zoomed-image" : ""
+										}`}
 										src={item.src}
 										alt={`блюдо` + " " + item.title}
 										width={240}
 										height={300}
 									/>
 								</div>
-							) : null}
-							<div className="px-3 pb-4 flex flex-col grow gap-5">
-								<h4 className="text-[#5e87c9]">{item.title}</h4>
+							) : (
+								<div className="w-[220px] h-[320px] flex flex-col justify-center m-auto">
+									<Image
+										className="rounded-lg m-auto no-photo"
+										src="/img/no_photo.png"
+										width={220}
+										height={220}
+										alt="no photo"
+									/>
+								</div>
+							)}
+							<div className="px-3 pb-4 flex flex-col z-10 grow gap-5">
+								<h4 className="text-[#5e87c9] text-xl md:text-2xl">
+									{item.title}
+								</h4>
 								<p className="opacity-80">{item.description}</p>
-								<p className="flex flex-col grow justify-end">
+								<p className="flex flex-col grow justify-end text-2xl">
 									{item.price} грн
 								</p>
 							</div>
@@ -69,7 +90,7 @@ const Bar = () => {
 					</li>
 				))}
 			</ul>
-		</section>
+		</div>
 	);
 };
 

@@ -97,7 +97,7 @@ const Breakfast = () => {
 									/>
 								</div>
 							) : (
-								<div className="w-[220px] h-[220px] flex flex-col align-items-center justify-center m-auto">
+								<div className="w-[220px] h-[320px] flex flex-col align-items-center justify-center m-auto">
 									<Image
 										className="rounded-lg m-auto no-photo"
 										src="/img/no_photo.png"
