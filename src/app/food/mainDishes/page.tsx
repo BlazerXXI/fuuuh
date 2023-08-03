@@ -100,6 +100,19 @@ const MainDishes = () => {
 			description: "Картопля по-селянські із фірмовими прянощами.",
 			price: "90",
 		},
+		{
+			src: "",
+			title: "Молода картопля",
+			description: "Молода картопля із пряними травами.",
+			price: "95",
+		},
+		{
+			src: "",
+			title: "Овочі гриль",
+			description:
+				"Шампіньйони, перець ( солодкий чи болгарський ) черрі, кабачок , цибуля ",
+			price: "100",
+		},
 	];
 
 	const [isZoomed, setIsZoomed] = useState(
