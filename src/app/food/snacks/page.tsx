@@ -17,7 +17,7 @@ const Snacks = () => {
 			title: "Дощечка до вина",
 			description:
 				"Ліниві вареники з згущеним молоком - це ситний і смачний варіант для сніданку або легкого обіду.",
-			price: "145",
+			price: "230",
 		},
 		{
 			src: "/img/snacks/bri.jpeg",
@@ -68,7 +68,7 @@ const Snacks = () => {
 		return () => {
 			document.removeEventListener("click", handleClickOutside);
 		};
-	}, [isZoomed]);
+	}, [isZoomed, snacks.length]);
 	return (
 		<div>
 			<div>
@@ -82,7 +82,10 @@ const Snacks = () => {
 					>
 						<div className="max-w-[240px] card-border flex flex-col grow gap-5">
 							{item.src ? (
-								<div ref={zoomedImageRef} className="w-[240px] h-[320px] z-20">
+								<div
+									ref={zoomedImageRef}
+									className="w-[240px] h-[320px] z-20 flex flex-col align-items-center justify-center"
+								>
 									<Image
 										onClick={() => handleImageClick(index)}
 										className={`rounded-lg object-cover ${
@@ -97,7 +100,7 @@ const Snacks = () => {
 							) : (
 								<div className="w-[240px] h-[300px] flex flex-col justify-center">
 									<Image
-										className="rounded-lg"
+										className="rounded-lg m-auto"
 										src="/img/no_photo.png"
 										width={240}
 										height={300}
