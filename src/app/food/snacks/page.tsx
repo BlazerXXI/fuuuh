@@ -12,8 +12,8 @@ const Snacks = () => {
 			price: "210",
 		},
 		{
-			src: "/img/snacks/bri.jpeg",
-			title: "Ліниві вареники із згущеним молоком",
+			src: "/img/snacks/dovina.jpeg",
+			title: "Дощечка до вина",
 			description:
 				"Ліниві вареники з згущеним молоком - це ситний і смачний варіант для сніданку або легкого обіду.",
 			price: "145",
@@ -84,7 +84,7 @@ const Snacks = () => {
 								<div ref={zoomedImageRef} className="w-[240px] h-[320px] z-20">
 									<Image
 										onClick={() => handleImageClick(index)}
-										className={`rounded-lg ${
+										className={`rounded-lg object-cover ${
 											isZoomed[index] ? "zoomed-image" : ""
 										}`}
 										src={item.src}
