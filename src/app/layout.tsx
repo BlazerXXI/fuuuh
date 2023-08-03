@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import Hero from "./components/Hero";
 
 const roboto = Roboto({
 	subsets: ["latin"],
@@ -24,7 +23,6 @@ export default function RootLayout({
 		<html className="container" lang="uk">
 			<body className={roboto.className}>
 				<Header />
-				<Hero />
 				<main className="container">{children}</main>
 				<Footer />
 			</body>

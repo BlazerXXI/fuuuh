@@ -3,14 +3,79 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 const Bar = () => {
-	const bar = [
+	interface barTypes {
+		src?: string | undefined;
+		title: string | undefined;
+		price?: string | undefined;
+		description?: string | undefined;
+	}
+	const popcorn: string[] = ["Солоний", "Суперсир", "Бекон"];
+	const popcornPrice: string | undefined = "100 / 150";
+
+	const bar: barTypes[] = [
 		{
-			src: "",
-			title: "Bar",
-			price: "210",
-			description: "",
+			title: "NAME",
+			price: "359",
 		},
 	];
+
+	const lemonade: string[] = [
+		"Ананасовий",
+
+		" Яблучний",
+
+		"Чорна смородина",
+
+		"Класичний лимонад",
+
+		"Лимонад манго-маракуйя",
+
+		"Хьюго б/а",
+	];
+	const lemonadePrice: string | undefined = "130";
+
+	const coffee: barTypes[] = [
+		{
+			title: "Американо/Еспресо",
+			price: "65",
+		},
+		{
+			title: "Рослинне молоко",
+			price: "+35",
+		},
+		{
+			title: "Капучіно/Латте",
+			price: "75/ 85/ 95",
+		},
+		{
+			title: "Флет",
+			price: "120",
+		},
+		{
+			title: "Айс латте",
+			price: "120",
+		},
+		{
+			title: "Какао",
+			price: "110",
+		},
+	];
+
+	const tea = ["Чорний / зелений"];
+	const teaPrice = "110";
+
+	const teaFirm: string[] = [
+		"Ананасовий",
+
+		"Чорна смородина",
+
+		"Імбирний",
+
+		"Лайм-м’ята",
+
+		"М’ята-маракуйя",
+	];
+	const teaFirmPrice: string | undefined = "150";
 
 	const [isZoomed, setIsZoomed] = useState(new Array(bar.length).fill(false));
 	const handleImageClick = (index: number) => {
@@ -39,63 +104,110 @@ const Bar = () => {
 		};
 	}, [isZoomed, bar.length]);
 	return (
-		<section id="bar">
-			<div>
-				<h2 className="title-section">Бар / кальян / попкорн</h2>
-			</div>
-			<div>
+		<>
+			<section id="hero">
+				<Image
+					className="object-cover w-full h-[30vh]"
+					src={"/img/hero/barBg.jpeg"}
+					width={1200}
+					height={335}
+					alt="hero image"
+				/>
+			</section>
+			<section id="bar">
 				<div>
-					<h3 className="sub-title-section">Попкорн 🍿</h3>
+					<h2 className="title-section">Бар / кальян / попкорн</h2>
 				</div>
-				<ul className="grid md:grid-cols-2 lg:grid-cols-4 md:mt-12 mt-7 gap-16">
-					{bar.map((item, index) => (
-						<li
-							className="text-center flex flex-col items-center justify-content-center "
-							key={index}
-						>
-							<div className="w-[240px] card-border flex flex-col grow gap-5">
-								{item.src ? (
-									<div
-										ref={zoomedImageRef}
-										className="w-[240px] h-[320px] z-20 flex flex-col align-items-center justify-center"
-									>
-										<Image
-											onClick={() => handleImageClick(index)}
-											className={`rounded-lg object-cover ${
-												isZoomed[index] ? "zoomed-image" : ""
-											}`}
-											src={item.src}
-											alt={`блюдо` + " " + item.title}
-											width={240}
-											height={300}
-										/>
-									</div>
-								) : (
-									<div className="w-[220px] h-[320px] flex flex-col justify-center m-auto">
-										<Image
-											className="rounded-lg m-auto no-photo"
-											src="/img/no_photo.png"
-											width={220}
-											height={220}
-											alt="no photo"
-										/>
-									</div>
-								)}
-								<div className="px-3 pb-4 flex flex-col z-10 grow gap-5">
+				<div>
+					<div>
+						<div>
+							<h3 className="sub-title-section">Попкорн 🍿</h3>
+							<p className="italic mt-4">Середній / Великий</p>
+						</div>
+						<ul className="flex flex-col gap-4 mt-3">
+							{popcorn.map((item, index) => (
+								<li key={index}>
+									<h4 className="text-[#5e87c9] text-xl md:text-2xl">{item}</h4>
+								</li>
+							))}
+							<p className=" underline">{popcornPrice} грн</p>
+						</ul>
+					</div>
+					<div>
+						<h3 className="sub-title-section">Кальян 💨</h3>
+						<Image
+							className="object-cover w-full mt-4"
+							width={360}
+							height={350}
+							src={"/img/hookah/hookah.jpeg"}
+							alt={"hookah"}
+						></Image>
+						<p className=" underline mt-6">360 грн</p>
+					</div>
+					<div>
+						<h3 className="italic text-1xl font-semibold bg-gradient-to-r from-purple-500 to-yellow-500 mt-6 ">
+							Iqos Heets
+						</h3>
+						<p className=" underline mt-6">130грн</p>
+					</div>
+					<div>
+						<div>
+							<h3 className="sub-title-section">Лимонади Фууух</h3>
+						</div>
+						<ul className="flex flex-col gap-4 mt-3">
+							{lemonade.map((item, index) => (
+								<li key={index}>
+									<h4 className="text-[#5e87c9] text-xl md:text-2xl">{item}</h4>
+								</li>
+							))}
+							<p className=" underline">{lemonadePrice} грн</p>
+						</ul>
+					</div>
+					<div>
+						<div>
+							<h3 className="sub-title-section">Кава ☕️</h3>
+							<p className="italic">Маленька / Середня / Велика</p>
+						</div>
+						<ul className="flex flex-col gap-4 mt-3">
+							{coffee.map((item, index) => (
+								<li key={index}>
 									<h4 className="text-[#5e87c9] text-xl md:text-2xl">
 										{item.title}
 									</h4>
-									<p className="opacity-80">{item.description}</p>
-									<p className="flex flex-col grow justify-end text-2xl">
-										{item.price} грн
-									</p>
-								</div>
-							</div>
-						</li>
-					))}
-				</ul>
-			</div>
-		</section>
+									<p className=" font-semibold">{item.price} грн</p>
+								</li>
+							))}
+						</ul>
+					</div>
+					<div>
+						<div>
+							<h3 className="sub-title-section">Чаї класичні 🍵</h3>
+						</div>
+						<ul className="flex flex-col gap-4 mt-3">
+							{tea.map((item, index) => (
+								<li key={index}>
+									<h4 className="text-[#5e87c9] text-xl md:text-2xl">{item}</h4>
+								</li>
+							))}
+						</ul>
+						<p className=" font-semibold underline">{teaPrice} грн</p>
+					</div>
+					<div>
+						<div>
+							<h3 className="sub-title-section">Чаї фірмові 🍵</h3>
+						</div>
+						<ul className="flex flex-col gap-4 mt-3">
+							{teaFirm.map((item, index) => (
+								<li key={index}>
+									<h4 className="text-[#5e87c9] text-xl md:text-2xl">{item}</h4>
+								</li>
+							))}
+						</ul>
+						<p className=" font-semibold underline">{teaFirmPrice} грн</p>
+					</div>
+				</div>
+			</section>
+		</>
 	);
 };
 
