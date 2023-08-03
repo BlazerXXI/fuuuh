@@ -190,7 +190,7 @@ const Bar = () => {
 								</li>
 							))}
 						</ul>
-						<p className=" font-semibold underline">{teaPrice} грн</p>
+						<p className=" font-semibold underline mt-3">{teaPrice} грн</p>
 					</div>
 					<div>
 						<div>
@@ -203,7 +203,7 @@ const Bar = () => {
 								</li>
 							))}
 						</ul>
-						<p className=" font-semibold underline">{teaFirmPrice} грн</p>
+						<p className=" font-semibold underline mt-3">{teaFirmPrice} грн</p>
 					</div>
 				</div>
 			</section>
