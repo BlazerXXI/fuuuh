@@ -1,5 +1,8 @@
 import Breakfast from "./breakfast/page";
+import MainDishes from "./mainDishes/page";
+import Salats from "./salats/page";
 import Snacks from "./snacks/page";
+import Soups from "./soups/page";
 
 const Food = () => {
 	return (
@@ -9,6 +12,9 @@ const Food = () => {
 			</div>
 			<Breakfast />
 			<Snacks />
+			<Soups />
+			<Salats />
+			<MainDishes />
 		</section>
 	);
 };

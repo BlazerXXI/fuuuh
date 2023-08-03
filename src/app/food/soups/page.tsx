@@ -2,58 +2,23 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
-const Snacks = () => {
-	const snacks = [
+const Soups = () => {
+	const soups = [
 		{
-			src: "/img/snacks/bri.jpeg",
-			title: "Сир Брі у хрусткій скоринці з полуничним соусом",
-
+			src: "/img/soups/okrosh.jpeg",
+			title: "Окрошка із слабосоленим лососем",
 			description:
-				"Витончений та смачний сир Брі, обгорнутий хрусткою, що розкривається на тарілці, доповнений ніжним джемом.",
-			price: "210",
-		},
-		{
-			src: "/img/snacks/dovina.jpeg",
-			title: "Дощечка до вина",
-			description:
-				"Ідеальне доповнення до вина. Сири (Чедр та Пармезан) , хамон, салямі, оливки,в‘ялені томати, черрі та сухарики)",
-			price: "230",
-		},
-		{
-			src: "/img/snacks/nagets.jpeg",
-			title: "Хрусткі нагетси",
-			description: "",
-			price: "220",
-		},
-		{
-			src: "/img/snacks/bruskets.png",
-			title: "Брускети з креветками",
-			description:
-				"Вишукані та смачні тости з креветками, приготованими з свіжими інгредієнтами, та гармонійними смаками для справжнього гастрономічного задоволення.",
-			price: "160",
-		},
-		{
-			src: "/img/snacks/brusketsSalmon.jpeg",
-			title: "Брускети з лососем та огірковою сальсою",
-			description:
-				"Вишукані брускети з лососем та авокадо ідеально підійдуть під вино та коктейлі.",
+				"Освіжаючий холодний суп з ароматними овочами,  слабосоленим лососем та смачним айраном для легкого та ситного обіду.",
 			price: "180",
 		},
 		{
-			src: "/img/snacks/aioli.jpeg",
-			title: "Смажені креветки з соусом айолі",
-			price: "330",
-		},
-		{
-			src: "/img/snacks/tempura.jpeg",
-			title: "Креветки темпура з медово-гірчичним соусом та солодким чілі",
-			price: "270",
+			src: "/img/soups/okrosh.jpeg",
+			title: "Окрошка із куркою",
+			price: "170",
 		},
 	];
 
-	const [isZoomed, setIsZoomed] = useState(
-		new Array(snacks.length).fill(false)
-	);
+	const [isZoomed, setIsZoomed] = useState(new Array(soups.length).fill(false));
 	const handleImageClick = (index: number) => {
 		setIsZoomed((prev) =>
 			prev.map((value, i) => (i === index ? !prev[i] : false))
@@ -69,7 +34,7 @@ const Snacks = () => {
 				!zoomedImageRef.current?.contains(targetElement) &&
 				isZoomed.some((value) => value)
 			) {
-				setIsZoomed(new Array(snacks.length).fill(false));
+				setIsZoomed(new Array(soups.length).fill(false));
 			}
 		};
 
@@ -78,14 +43,14 @@ const Snacks = () => {
 		return () => {
 			document.removeEventListener("click", handleClickOutside);
 		};
-	}, [isZoomed, snacks.length]);
+	}, [isZoomed, soups.length]);
 	return (
 		<div>
 			<div>
-				<h3 className="sub-title-section">Закуски</h3>
+				<h3 className="sub-title-section">Супи</h3>
 			</div>
 			<ul className="grid md:grid-cols-2 lg:grid-cols-4 md:mt-12 mt-7 gap-16">
-				{snacks.map((item, index) => (
+				{soups.map((item, index) => (
 					<li
 						className="text-center flex flex-col items-center justify-content-center "
 						key={index}
@@ -135,4 +100,4 @@ const Snacks = () => {
 	);
 };
 
-export default Snacks;
+export default Soups;

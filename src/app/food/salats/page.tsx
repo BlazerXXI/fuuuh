@@ -2,46 +2,32 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
-const Breakfast = () => {
-	const breakfast = [
+const Salats = () => {
+	const salats = [
 		{
-			src: "/img/breakfast/syrnik.jpeg",
-			title: "Сирники ФУУУХ",
+			title: "Цезар із куркою",
 			description:
-				"Ці сирники готуються у духовці . Подаються зі сметаною та варенням і є чудовим вибором для тих, хто любить солодкий сніданок.",
-			price: "155",
+				"Ароматний салат зі свіжими овочами, соковитими шматочками курки, пікантними сухариками та кремовим Цезар-соусом, ідеальний для здорового обіду або вечері.",
+			price: "220",
 		},
 		{
-			src: "/img/breakfast/lenivy.jpeg",
-			title: "Ліниві вареники із згущеним молоком",
+			src: "/img/salats/cezar.jpeg",
+			title: "Цезар із креветками",
 			description:
-				"Ліниві вареники з згущеним молоком - це ситний і смачний варіант для сніданку або легкого обіду.",
-			price: "145",
+				"Делікатний салат Цезар зі смаженими креветками, свіжим салатом айсберг, апетитними гренками та ніжним Цезар-соусом для насолоди та здорового харчування.",
+			price: "170",
 		},
 		{
-			src: "/img/breakfast/omlet.jpeg",
-			title: "Омлет з лососем, авокадо та моцареллою",
+			src: "/img/salats/mix.jpeg",
+			title: "Мікс-салат з авокадо, чері та моцареллою",
 			description:
-				"Омлет з авокадо - це страва, яка додасть вам енергії та ситості на початку дня. ",
-			price: "190",
-		},
-		{
-			src: "/img/breakfast/omlet.jpeg",
-			title: "Омлет з сиром, куркою та грибами",
-			description:
-				"Ситний та поживний сніданок, з підсмаженою курочкою та зеленню.",
-			price: "180",
-		},
-		{
-			title: "Англійський сніданок",
-			description:
-				"Ситний та поживний сніданок, який складається з м'ясних делікатесів, свіжих овочів, яєчниці та  тостів, що допоможе розпочати день",
-			price: "195",
+				"Легкий та поживний салат з авокадо, яскравими томатами чері, смачною моцарелою та ароматними травами, ідеальний для здорового обіду або вечері.",
+			price: "220",
 		},
 	];
 
 	const [isZoomed, setIsZoomed] = useState(
-		new Array(breakfast.length).fill(false)
+		new Array(salats.length).fill(false)
 	);
 	const handleImageClick = (index: number) => {
 		setIsZoomed((prev) =>
@@ -58,7 +44,7 @@ const Breakfast = () => {
 				!zoomedImageRef.current?.contains(targetElement) &&
 				isZoomed.some((value) => value)
 			) {
-				setIsZoomed(new Array(breakfast.length).fill(false));
+				setIsZoomed(new Array(salats.length).fill(false));
 			}
 		};
 
@@ -67,14 +53,14 @@ const Breakfast = () => {
 		return () => {
 			document.removeEventListener("click", handleClickOutside);
 		};
-	}, [breakfast.length, isZoomed]);
+	}, [isZoomed, salats.length]);
 	return (
 		<div>
 			<div>
-				<h3 className="sub-title-section">Сніданки (весь день)</h3>
+				<h3 className="sub-title-section">Салати</h3>
 			</div>
 			<ul className="grid md:grid-cols-2 lg:grid-cols-4 md:mt-12 mt-7 gap-16">
-				{breakfast.map((item, index) => (
+				{salats.map((item, index) => (
 					<li
 						className="text-center flex flex-col items-center justify-content-center "
 						key={index}
@@ -87,7 +73,7 @@ const Breakfast = () => {
 								>
 									<Image
 										onClick={() => handleImageClick(index)}
-										className={`rounded-lg ${
+										className={`rounded-lg object-cover ${
 											isZoomed[index] ? "zoomed-image" : ""
 										}`}
 										src={item.src}
@@ -97,7 +83,7 @@ const Breakfast = () => {
 									/>
 								</div>
 							) : (
-								<div className="w-[220px] h-[320px] flex flex-col align-items-center justify-center m-auto">
+								<div className="w-[220px] h-[320px] flex flex-col justify-center m-auto">
 									<Image
 										className="rounded-lg m-auto no-photo"
 										src="/img/no_photo.png"
@@ -131,13 +117,10 @@ const Breakfast = () => {
 						<span>Лосось</span> 95грн
 					</li>
 					<li className="flex justify-between mt-1">
-						<span>Моцарелла</span> 55грн
+						<span>Ростбіф</span> 65грн
 					</li>
 					<li className="flex justify-between mt-1">
-						<span>Зелень та авокадо</span> 60грн
-					</li>
-					<li className="flex justify-between mt-1">
-						<span>Бекон</span> 60грн
+						<span>Креветки</span> 5шт 105грн
 					</li>
 				</ul>
 			</div>
@@ -145,4 +128,4 @@ const Breakfast = () => {
 	);
 };
 
-export default Breakfast;
+export default Salats;
