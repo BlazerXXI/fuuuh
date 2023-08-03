@@ -67,7 +67,7 @@ const Breakfast = () => {
 		return () => {
 			document.removeEventListener("click", handleClickOutside);
 		};
-	}, [isZoomed]);
+	}, [breakfast.length, isZoomed]);
 	return (
 		<div>
 			<div>
