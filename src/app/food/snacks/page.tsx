@@ -98,12 +98,12 @@ const Snacks = () => {
 									/>
 								</div>
 							) : (
-								<div className="w-[240px] h-[300px] flex flex-col justify-center">
+								<div className="w-[220px] h-[220px] flex flex-col justify-center m-auto">
 									<Image
-										className="rounded-lg m-auto"
+										className="rounded-lg m-auto no-photo"
 										src="/img/no_photo.png"
-										width={240}
-										height={300}
+										width={220}
+										height={220}
 										alt="no photo"
 									/>
 								</div>

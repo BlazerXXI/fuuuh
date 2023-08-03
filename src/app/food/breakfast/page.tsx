@@ -81,7 +81,10 @@ const Breakfast = () => {
 					>
 						<div className="max-w-[240px] card-border flex flex-col grow gap-5">
 							{item.src ? (
-								<div ref={zoomedImageRef} className="w-[240px] h-[320px] z-20 flex flex-col align-items-center justify-center">
+								<div
+									ref={zoomedImageRef}
+									className="w-[240px] h-[320px] z-20 flex flex-col align-items-center justify-center"
+								>
 									<Image
 										onClick={() => handleImageClick(index)}
 										className={`rounded-lg ${
@@ -94,12 +97,12 @@ const Breakfast = () => {
 									/>
 								</div>
 							) : (
-								<div className="w-[240px] h-[300px] flex flex-col align-items-center justify-center">
+								<div className="w-[220px] h-[220px] flex flex-col align-items-center justify-center m-auto">
 									<Image
-										className="rounded-lg m-auto"
+										className="rounded-lg m-auto no-photo"
 										src="/img/no_photo.png"
 										width={220}
-										height={300}
+										height={220}
 										alt="no photo"
 									/>
 								</div>
