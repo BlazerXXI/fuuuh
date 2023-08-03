@@ -124,5 +124,19 @@ a {
 	}
 }
 
-.zoom-image {
+@media (max-width: 768px) {
+	.zoomed-image {
+		transform: scale(1.5);
+	}
+}
+.zoomed-image::after {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 19;
+	height: 100vh !important;
+	width: 100vw !important;
+	background-color: #19191980;
 }

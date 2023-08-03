@@ -33,7 +33,7 @@ const BurgerMenu: React.FC<BurgerMenuProps> = () => {
 		<div className="md:hidden" ref={menuRef}>
 			<button
 				onClick={toggleMenu}
-				className="block p-2 transition-colors duration-200 rounded focus:outline-none bg-[#191919f0]"
+				className="flex items-center gap-2 p-2 transition-colors duration-200 rounded focus:outline-none"
 			>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
@@ -61,9 +61,9 @@ const BurgerMenu: React.FC<BurgerMenuProps> = () => {
 			</button>
 
 			{isOpen && (
-				<div className="absolute flex flex-col gap-7 top-14 right-0 z-10 bg-[#191919f0] p-4 shadow-lg">
+				<div className="absolute flex flex-col menuBlock gap-7 top-14 right-0 z-10 bg-[#191919f0] p-4 shadow-lg">
 					<nav className="flex flex-col gap-7 text-lg items-stretch">
-						<Link href="/food" className="underline">
+						<Link href="/" className="underline">
 							Їжа
 						</Link>
 						<Link href="/bar" className="flex flex-col underline">
