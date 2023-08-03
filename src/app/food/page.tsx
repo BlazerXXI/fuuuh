@@ -1,4 +1,5 @@
 import Breakfast from "./breakfast/page";
+import Deserts from "./deserts/page";
 import MainDishes from "./mainDishes/page";
 import Salats from "./salats/page";
 import Snacks from "./snacks/page";
@@ -15,6 +16,7 @@ const Food = () => {
 			<Soups />
 			<Salats />
 			<MainDishes />
+			<Deserts />
 		</section>
 	);
 };

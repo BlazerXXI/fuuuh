@@ -53,7 +53,7 @@ const Bar = () => {
 							className="text-center flex flex-col items-center justify-content-center "
 							key={index}
 						>
-							<div className="max-w-[240px] card-border flex flex-col grow gap-5">
+							<div className="w-[240px] card-border flex flex-col grow gap-5">
 								{item.src ? (
 									<div
 										ref={zoomedImageRef}

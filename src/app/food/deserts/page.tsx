@@ -2,23 +2,29 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
-const Soups = () => {
-	const soups = [
+const Deserts = () => {
+	const deserts = [
 		{
-			src: "/img/soups/okrosh.jpeg",
-			title: "Окрошка із слабосоленим лососем",
-			description:
-				"Освіжаючий холодний суп з ароматними овочами,  слабосоленим лососем та смачним айраном для легкого та ситного обіду.",
-			price: "180",
+			title: "Тірамісу",
+			price: "145",
 		},
 		{
-			src: "/img/soups/okrosh.jpeg",
-			title: "Окрошка із куркою",
-			price: "170",
+			src: "/img/deserts/semifredo.jpeg",
+			title: "Морозиво «Семіфредо» 3 шарика",
+			description:
+				"Ніжний та кремовий десерт італійського походження, який поєднує м'якість замороженого мусу зі смаковитими добавками.",
+			price: "110",
+		},
+		{
+			title: "Морозиво «Пломбір» 3 шарика",
+			description: "3 шарика морозива пломбір, з полуничним джемом та ягодами",
+			price: "110",
 		},
 	];
 
-	const [isZoomed, setIsZoomed] = useState(new Array(soups.length).fill(false));
+	const [isZoomed, setIsZoomed] = useState(
+		new Array(deserts.length).fill(false)
+	);
 	const handleImageClick = (index: number) => {
 		setIsZoomed((prev) =>
 			prev.map((value, i) => (i === index ? !prev[i] : false))
@@ -34,7 +40,7 @@ const Soups = () => {
 				!zoomedImageRef.current?.contains(targetElement) &&
 				isZoomed.some((value) => value)
 			) {
-				setIsZoomed(new Array(soups.length).fill(false));
+				setIsZoomed(new Array(deserts.length).fill(false));
 			}
 		};
 
@@ -43,14 +49,14 @@ const Soups = () => {
 		return () => {
 			document.removeEventListener("click", handleClickOutside);
 		};
-	}, [isZoomed, soups.length]);
+	}, [isZoomed, deserts.length]);
 	return (
 		<div>
 			<div>
-				<h3 className="sub-title-section">Супи</h3>
+				<h3 className="sub-title-section">Десерти</h3>
 			</div>
 			<ul className="grid md:grid-cols-2 lg:grid-cols-4 md:mt-12 mt-7 gap-16">
-				{soups.map((item, index) => (
+				{deserts.map((item, index) => (
 					<li
 						className="text-center flex flex-col items-center justify-content-center "
 						key={index}
@@ -100,4 +106,4 @@ const Soups = () => {
 	);
 };
 
-export default Soups;
+export default Deserts;

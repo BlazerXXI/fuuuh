@@ -113,6 +113,12 @@ const MainDishes = () => {
 				"Шампіньйони, перець ( солодкий чи болгарський ) черрі, кабачок , цибуля ",
 			price: "100",
 		},
+		{
+			src: "/img/sideDishes/corn.jpeg",
+			title: "Кукурудза на грилі",
+			description: "2 качана",
+			price: "100",
+		},
 	];
 
 	const [isZoomed, setIsZoomed] = useState(
@@ -157,7 +163,7 @@ const MainDishes = () => {
 						className="text-center flex flex-col items-center justify-content-center "
 						key={index}
 					>
-						<div className="max-w-[240px] card-border flex flex-col grow gap-5">
+						<div className="w-[240px] card-border flex flex-col grow gap-5">
 							{item.src ? (
 								<div
 									ref={zoomedImageRef}
@@ -208,7 +214,7 @@ const MainDishes = () => {
 							className="text-center flex flex-col items-center justify-content-center "
 							key={index}
 						>
-							<div className="max-w-[240px] card-border flex flex-col grow gap-5">
+							<div className="w-[240px] card-border flex flex-col grow gap-5">
 								{item.src ? (
 									<div
 										ref={zoomedImageRef}
