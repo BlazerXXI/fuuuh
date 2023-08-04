@@ -1,225 +1,20 @@
 "use client";
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { BarTypes } from "@/app/types";
+import {
+	popcorn,
+	popcornPrice,
+	lemonade,
+	lemonadePrice,
+	coffee,
+	tea,
+	teaPrice,
+	teaFirm,
+	teaFirmPrice,
+	cocktail,
+} from "@/app/menu.json";
 
 const Bar = () => {
-	interface barTypes {
-		src: string;
-		title: string;
-		price?: string;
-		description?: string;
-		individual?: string;
-	}
-	const popcorn: string[] = ["Солоний", "Суперсир", "Бекон"];
-	const popcornPrice: string | undefined | number = "100 / 150";
-
-	const bar: barTypes[] = [
-		{
-			src: "",
-			title: "NAME",
-			price: "359",
-		},
-	];
-
-	const lemonade: string[] = [
-		"Ананасовий",
-
-		" Яблучний",
-
-		"Чорна смородина",
-
-		"Класичний лимонад",
-
-		"Лимонад манго-маракуйя",
-
-		"Хьюго б/а",
-	];
-	const lemonadePrice: string | undefined = "130";
-
-	const coffee: barTypes[] = [
-		{
-			src: "",
-			title: "Американо/Еспресо",
-			price: "65",
-		},
-		{
-			src: "",
-			title: "Рослинне молоко",
-			price: "+35",
-		},
-		{
-			src: "",
-			title: "Капучіно/Латте",
-			price: "75/ 85/ 95",
-		},
-		{
-			src: "",
-			title: "Флет",
-			price: "120",
-		},
-		{
-			src: "",
-			title: "Айс латте",
-			price: "120",
-		},
-		{
-			src: "",
-			title: "Какао",
-			price: "110",
-		},
-	];
-
-	const tea = ["Чорний / зелений"];
-	const teaPrice = "110";
-
-	const teaFirm: string[] = [
-		"Ананасовий",
-
-		"Чорна смородина",
-
-		"Імбирний",
-
-		"Лайм-м’ята",
-
-		"М’ята-маракуйя",
-	];
-	const teaFirmPrice: string | undefined = "150";
-
-	const cocktail: barTypes[] = [
-		{
-			src: "/img/bar/fuuuh.jpeg",
-			title: "FUUUH",
-			description: "На основі джину, кисло-солодкий з терпкістю амаретто",
-			price: "220",
-		},
-		{
-			src: "/img/bar/popcorn.jpeg",
-			title: "POPKORN",
-			description: "На основі джину, солодкий з яблучною кислинкою",
-			price: "220",
-		},
-		{
-			src: "/img/bar/satisfaction.jpeg",
-			title: "SATISFACTION",
-			description: "На основі апероль і просекко,кисло-солодкий",
-			price: "220",
-		},
-		{
-			src: "/img/bar/SPECIAL.jpeg",
-			title: "SPECIAL",
-			description: "На основі бурбону, кисло солодкий з пряністю імбиру",
-			price: "220",
-		},
-		{
-			src: "/img/bar/SICILIA.jpeg",
-			title: "SICILIA",
-			description: "На основі лимончело, кисло-солодкий з нотками яблука",
-			price: "220",
-		},
-		{
-			src: "/img/bar/COSMIC.jpeg",
-			title: "COSMIC",
-			description: "На основі джину, солодкий з нотами вишні та малини",
-			price: "220",
-		},
-		{
-			src: "/img/bar/ASTON.jpeg",
-			title: "ASTON",
-			description:
-				"На основі лимончелло і просекко, легко-кислий, але дуже освіжаючий",
-			price: "220",
-		},
-		{
-			src: "/img/bar/TROPIC.jpeg",
-			title: "TROPIC",
-			description: "На основі рому, солодкий, тропічний",
-			price: "220",
-		},
-		{
-			src: "/img/bar/SMAGY.jpeg",
-			title: "SMAGY",
-			description: "На основі джину, зі смородиною, осаіжаючий та солодкий",
-			price: "220",
-		},
-		{
-			src: "/img/bar/Milk.jpeg",
-			title: "Milk Punch",
-			description: "На основі рому, дуже м’який , з легкою кислинкою",
-			price: "220",
-		},
-		{
-			src: "/img/bar/milk-punch.jpeg",
-			title: "Milk Punch ( молочно цитрусовий)",
-			description:
-				"Пунш на основі джину з пряністю кориці та вершково-цитрусовим післясмаком",
-			price: "220",
-		},
-		{
-			src: "/img/bar/Pine.jpeg",
-			title: "Pine",
-			description:
-				"На основі віскі та сухого вермута , з солодким післясмаком ананасу",
-			price: "220",
-		},
-		{
-			src: "/img/bar/vanilla.jpeg",
-			title: "Red vanilla",
-			description: "На основі віскі та вінілі , з легкою кислинкою",
-			price: "220",
-		},
-		{
-			src: "/img/bar/honey.jpeg",
-			title: "Honey pear",
-			description: "На основі джину з медово-грушовим смаком",
-			price: "220",
-		},
-		{
-			src: "/img/bar/currant.jpeg",
-			title: "Royal currant",
-			description: "На основі смородинового джину зі смаком кисленької малини",
-			price: "220",
-		},
-		{
-			src: "/img/bar/Pie.jpeg",
-			title: "Pie drink",
-			description: "На основі джину, смак яблучного штруделю з корицею",
-			price: "220",
-		},
-		{
-			src: "/img/bar/RUSPBERRY.jpeg",
-			title: "French 75",
-			individual: "RUSPBERRY",
-			description: "На основі малинового джину та просеко, освіжаючий",
-			price: "220",
-		},
-	];
-
-	const [isZoomed, setIsZoomed] = useState(new Array(bar.length).fill(false));
-	const handleImageClick = (index: number) => {
-		setIsZoomed((prev) =>
-			prev.map((value, i) => (i === index ? !prev[i] : false))
-		);
-	};
-	const zoomedImageRef = useRef<HTMLDivElement>(null);
-
-	useEffect(() => {
-		const handleClickOutside = (event: MouseEvent) => {
-			if (!event.target) return;
-			const targetElement = event.target as HTMLElement;
-			if (
-				!zoomedImageRef.current?.contains(targetElement) &&
-				isZoomed.some((value) => value)
-			) {
-				setIsZoomed(new Array(bar.length).fill(false));
-			}
-		};
-
-		document.addEventListener("click", handleClickOutside);
-
-		return () => {
-			document.removeEventListener("click", handleClickOutside);
-		};
-	}, [isZoomed, bar.length]);
 	return (
 		<>
 			<section id="hero">
@@ -242,7 +37,7 @@ const Bar = () => {
 							<p className="italic mt-4">Середній / Великий</p>
 						</div>
 						<ul className="flex flex-col gap-4 mt-3">
-							{popcorn.map((item, index) => (
+							{popcorn.map((item: string, index: number) => (
 								<li key={index}>
 									<h4 className="text-[#5e87c9] text-xl md:text-2xl">{item}</h4>
 								</li>
@@ -272,7 +67,7 @@ const Bar = () => {
 							<h3 className="sub-title-section">Лимонади Фууух</h3>
 						</div>
 						<ul className="flex flex-col gap-4 mt-3">
-							{lemonade.map((item, index) => (
+							{lemonade.map((item: string, index: number) => (
 								<li key={index}>
 									<h4 className="text-[#5e87c9] text-xl md:text-2xl">{item}</h4>
 								</li>
@@ -286,7 +81,7 @@ const Bar = () => {
 							<p className="italic">Маленька / Середня / Велика</p>
 						</div>
 						<ul className="flex flex-col gap-4 mt-3">
-							{coffee.map((item, index) => (
+							{coffee.map((item: BarTypes, index: number) => (
 								<li key={index}>
 									<h4 className="text-[#5e87c9] text-xl md:text-2xl">
 										{item.title}
@@ -301,7 +96,7 @@ const Bar = () => {
 							<h3 className="sub-title-section">Чаї класичні 🍵</h3>
 						</div>
 						<ul className="flex flex-col gap-4 mt-3">
-							{tea.map((item, index) => (
+							{tea.map((item: string, index: number) => (
 								<li key={index}>
 									<h4 className="text-[#5e87c9] text-xl md:text-2xl">{item}</h4>
 								</li>
@@ -314,7 +109,7 @@ const Bar = () => {
 							<h3 className="sub-title-section">Чаї фірмові 🍵</h3>
 						</div>
 						<ul className="flex flex-col gap-4 mt-3">
-							{teaFirm.map((item, index) => (
+							{teaFirm.map((item: string, index: number) => (
 								<li key={index}>
 									<h4 className="text-[#5e87c9] text-xl md:text-2xl">{item}</h4>
 								</li>
@@ -327,7 +122,7 @@ const Bar = () => {
 							<h3 className="sub-title-section">Коктейлі фірмові 🍸</h3>
 						</div>
 						<ul className="grid md:grid-cols-2 lg:grid-cols-3 items-center justify-around gap-4 mt-16">
-							{cocktail.map((item, index) => (
+							{cocktail.map((item: BarTypes, index: number) => (
 								<li
 									className="flex flex-col gap-2 w-[330px] h-[600px]"
 									key={index}

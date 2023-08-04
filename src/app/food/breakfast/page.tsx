@@ -1,45 +1,10 @@
 "use client";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import { breakfast } from "../../menu.json";
+import { MenuTypes } from "@/app/types";
 
 const Breakfast = () => {
-	const breakfast = [
-		{
-			src: "/img/breakfast/syrnik.jpeg",
-			title: "Сирники ФУУУХ",
-			description:
-				"Ці сирники готуються у духовці . Подаються зі сметаною та варенням і є чудовим вибором для тих, хто любить солодкий сніданок.",
-			price: "155",
-		},
-		{
-			src: "/img/breakfast/lenivy.jpeg",
-			title: "Ліниві вареники із згущеним молоком",
-			description:
-				"Ліниві вареники з згущеним молоком - це ситний і смачний варіант для сніданку або легкого обіду.",
-			price: "145",
-		},
-		{
-			src: "/img/breakfast/omlet.jpeg",
-			title: "Омлет з лососем, авокадо та моцареллою",
-			description:
-				"Омлет з авокадо - це страва, яка додасть вам енергії та ситості на початку дня. ",
-			price: "190",
-		},
-		{
-			src: "/img/breakfast/omlet.jpeg",
-			title: "Омлет з сиром, куркою та грибами",
-			description:
-				"Ситний та поживний сніданок, з підсмаженою курочкою та зеленню.",
-			price: "180",
-		},
-		{
-			title: "Англійський сніданок",
-			description:
-				"Ситний та поживний сніданок, який складається з м'ясних делікатесів, свіжих овочів, яєчниці та  тостів, що допоможе розпочати день",
-			price: "195",
-		},
-	];
-
 	const [isZoomed, setIsZoomed] = useState(
 		new Array(breakfast.length).fill(false)
 	);
@@ -67,14 +32,14 @@ const Breakfast = () => {
 		return () => {
 			document.removeEventListener("click", handleClickOutside);
 		};
-	}, [breakfast.length, isZoomed]);
+	}, [isZoomed]);
 	return (
-		<div>
+		<div id="breakfast">
 			<div>
 				<h3 className="sub-title-section">Сніданки (весь день)</h3>
 			</div>
 			<ul className="grid md:grid-cols-2 lg:grid-cols-4 md:mt-12 mt-7 gap-16">
-				{breakfast.map((item, index) => (
+				{breakfast.map((item: MenuTypes, index: number) => (
 					<li
 						className="text-center flex flex-col items-center justify-content-center "
 						key={index}

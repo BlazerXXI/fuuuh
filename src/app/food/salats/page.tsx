@@ -1,31 +1,10 @@
 "use client";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import { salats } from "../../menu.json";
+import { MenuTypes } from "@/app/types";
 
 const Salats = () => {
-	const salats = [
-		{
-			title: "Цезар із куркою",
-			description:
-				"Ароматний салат зі свіжими овочами, соковитими шматочками курки, пікантними сухариками та кремовим Цезар-соусом, ідеальний для здорового обіду або вечері.",
-			price: "220",
-		},
-		{
-			src: "/img/salats/cezar.jpeg",
-			title: "Цезар із креветками",
-			description:
-				"Делікатний салат Цезар зі смаженими креветками, свіжим салатом айсберг, апетитними гренками та ніжним Цезар-соусом для насолоди та здорового харчування.",
-			price: "170",
-		},
-		{
-			src: "/img/salats/mix.jpeg",
-			title: "Мікс-салат з авокадо, чері та моцареллою",
-			description:
-				"Легкий та поживний салат з авокадо, яскравими томатами чері, смачною моцарелою та ароматними травами, ідеальний для здорового обіду або вечері.",
-			price: "220",
-		},
-	];
-
 	const [isZoomed, setIsZoomed] = useState(
 		new Array(salats.length).fill(false)
 	);
@@ -53,14 +32,14 @@ const Salats = () => {
 		return () => {
 			document.removeEventListener("click", handleClickOutside);
 		};
-	}, [isZoomed, salats.length]);
+	}, [isZoomed]);
 	return (
-		<div>
+		<div id="salats">
 			<div>
 				<h3 className="sub-title-section">Салати</h3>
 			</div>
 			<ul className="grid md:grid-cols-2 lg:grid-cols-4 md:mt-12 mt-7 gap-16">
-				{salats.map((item, index) => (
+				{salats.map((item: MenuTypes, index: number) => (
 					<li
 						className="text-center flex flex-col items-center justify-content-center "
 						key={index}

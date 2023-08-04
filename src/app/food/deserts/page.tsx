@@ -1,27 +1,10 @@
 "use client";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import { deserts } from "../../menu.json";
+import { MenuTypes } from "@/app/types";
 
 const Deserts = () => {
-	const deserts = [
-		{
-			title: "Тірамісу",
-			price: "145",
-		},
-		{
-			src: "/img/deserts/semifredo.jpeg",
-			title: "Морозиво «Семіфредо» 3 шарика",
-			description:
-				"Ніжний та кремовий десерт італійського походження, який поєднує м'якість замороженого мусу зі смаковитими добавками.",
-			price: "110",
-		},
-		{
-			title: "Морозиво «Пломбір» 3 шарика",
-			description: "3 шарика морозива пломбір, з полуничним джемом та ягодами",
-			price: "110",
-		},
-	];
-
 	const [isZoomed, setIsZoomed] = useState(
 		new Array(deserts.length).fill(false)
 	);
@@ -49,14 +32,14 @@ const Deserts = () => {
 		return () => {
 			document.removeEventListener("click", handleClickOutside);
 		};
-	}, [isZoomed, deserts.length]);
+	}, [isZoomed]);
 	return (
-		<div>
+		<div id="deserts">
 			<div>
 				<h3 className="sub-title-section">Десерти</h3>
 			</div>
 			<ul className="grid md:grid-cols-2 lg:grid-cols-4 md:mt-12 mt-7 gap-16">
-				{deserts.map((item, index) => (
+				{deserts.map((item: MenuTypes, index: number) => (
 					<li
 						className="text-center flex flex-col items-center justify-content-center "
 						key={index}

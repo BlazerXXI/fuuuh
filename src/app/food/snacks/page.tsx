@@ -1,56 +1,10 @@
 "use client";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import { snacks } from "../../menu.json";
+import { MenuTypes } from "@/app/types";
 
 const Snacks = () => {
-	const snacks = [
-		{
-			src: "/img/snacks/bri.jpeg",
-			title: "Сир Брі у хрусткій скоринці з полуничним соусом",
-
-			description:
-				"Витончений та смачний сир Брі, обгорнутий хрусткою, що розкривається на тарілці, доповнений ніжним джемом.",
-			price: "210",
-		},
-		{
-			src: "/img/snacks/dovina.jpeg",
-			title: "Дощечка до вина",
-			description:
-				"Ідеальне доповнення до вина. Сири (Чедр та Пармезан) , хамон, салямі, оливки,в‘ялені томати, черрі та сухарики)",
-			price: "230",
-		},
-		{
-			src: "/img/snacks/nagets.jpeg",
-			title: "Хрусткі нагетси",
-			description: "",
-			price: "220",
-		},
-		{
-			src: "/img/snacks/bruskets.png",
-			title: "Брускети з креветками",
-			description:
-				"Вишукані та смачні тости з креветками, приготованими з свіжими інгредієнтами, та гармонійними смаками для справжнього гастрономічного задоволення.",
-			price: "160",
-		},
-		{
-			src: "/img/snacks/brusketsSalmon.jpeg",
-			title: "Брускети з лососем та огірковою сальсою",
-			description:
-				"Вишукані брускети з лососем та авокадо ідеально підійдуть під вино та коктейлі.",
-			price: "180",
-		},
-		{
-			src: "/img/snacks/aioli.jpeg",
-			title: "Смажені креветки з соусом айолі",
-			price: "330",
-		},
-		{
-			src: "/img/snacks/tempura.jpeg",
-			title: "Креветки темпура з медово-гірчичним соусом та солодким чілі",
-			price: "270",
-		},
-	];
-
 	const [isZoomed, setIsZoomed] = useState(
 		new Array(snacks.length).fill(false)
 	);
@@ -78,14 +32,14 @@ const Snacks = () => {
 		return () => {
 			document.removeEventListener("click", handleClickOutside);
 		};
-	}, [isZoomed, snacks.length]);
+	}, [isZoomed]);
 	return (
-		<div>
+		<div id="snacks">
 			<div>
 				<h3 className="sub-title-section">Закуски</h3>
 			</div>
 			<ul className="grid md:grid-cols-2 lg:grid-cols-4 md:mt-12 mt-7 gap-16">
-				{snacks.map((item, index) => (
+				{snacks.map((item: MenuTypes, index: number) => (
 					<li
 						className="text-center flex flex-col items-center justify-content-center "
 						key={index}

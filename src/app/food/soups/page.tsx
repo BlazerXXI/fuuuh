@@ -1,23 +1,10 @@
 "use client";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import { soups } from "../../menu.json";
+import { MenuTypes } from "@/app/types";
 
 const Soups = () => {
-	const soups = [
-		{
-			src: "/img/soups/okrosh.jpeg",
-			title: "Окрошка із слабосоленим лососем",
-			description:
-				"Освіжаючий холодний суп з ароматними овочами,  слабосоленим лососем та смачним айраном для легкого та ситного обіду.",
-			price: "180",
-		},
-		{
-			src: "/img/soups/okrosh.jpeg",
-			title: "Окрошка із куркою",
-			price: "170",
-		},
-	];
-
 	const [isZoomed, setIsZoomed] = useState(new Array(soups.length).fill(false));
 	const handleImageClick = (index: number) => {
 		setIsZoomed((prev) =>
@@ -43,14 +30,14 @@ const Soups = () => {
 		return () => {
 			document.removeEventListener("click", handleClickOutside);
 		};
-	}, [isZoomed, soups.length]);
+	}, [isZoomed]);
 	return (
-		<div>
+		<div id="soups">
 			<div>
 				<h3 className="sub-title-section">Супи</h3>
 			</div>
 			<ul className="grid md:grid-cols-2 lg:grid-cols-4 md:mt-12 mt-7 gap-16">
-				{soups.map((item, index) => (
+				{soups.map((item: MenuTypes, index: number) => (
 					<li
 						className="text-center flex flex-col items-center justify-content-center "
 						key={index}

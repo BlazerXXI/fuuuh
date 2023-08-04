@@ -1,126 +1,11 @@
 "use client";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import { mainDishes } from "../../menu.json";
+import { sideDishes } from "../../menu.json";
+import { MenuTypes } from "@/app/types";
 
 const MainDishes = () => {
-	interface typesMenu {
-		src?: string;
-		title: string;
-		description?: string;
-		price: string;
-		pricePer?: string;
-	}
-
-	const mainDishes: typesMenu[] = [
-		{
-			src: "/img/mainDishes/kovbasky.jpeg",
-			title: "Ковбаски з соусом барбекю",
-			description:
-				"Ідеальні ковбаски підсмажені до скоринки на грилі та соус барбекю",
-			price: "220",
-		},
-		{
-			src: "/img/mainDishes/fuuuh.jpeg",
-			title: "Наш Бургер «Фууух» із картоплею фрі",
-			description:
-				"Соковитий бургер «Фууух» з м’якою булочкою та дуже соковитим м’ясом, із салатом айсберг, справжнім сиром Чедр, беконом та фірмовим соусом",
-			price: "270",
-		},
-		{
-			src: "/img/mainDishes/4cheese.jpeg",
-			title: "Бургер 4CHEESE",
-			description: "",
-			price: "315",
-		},
-		{
-			src: "/img/mainDishes/kare.jpeg",
-			title: "Каре теля з соусом із чорної смородини",
-			description: "",
-			price: "350",
-		},
-		{
-			src: "/img/mainDishes/shash.jpeg",
-			title: "Курячі шашлички з часниковим соусом",
-			description: "",
-			price: "200",
-		},
-		{
-			src: "/img/mainDishes/chiken.jpeg",
-			title: "Курча з аджикою",
-			description: "",
-			price: "295",
-		},
-		{
-			src: "/img/mainDishes/dorado.jpeg",
-			title: "Дорадо на грилі",
-			description: "Дорадо з сальсою «верде»",
-			price: "~550гр 320",
-		},
-		{
-			src: "",
-			title: "Стейк із телятини на кісточці",
-			description: "Дорадо з сальсою «верде»",
-			price: "150",
-			pricePer: "за 100гр ",
-		},
-		{
-			src: "/img/mainDishes/koreika.jpeg",
-			title: "Корейка із свинини",
-			description: "Корейка із соусом барбекю. Вихід стейку від 250гр.",
-			price: "85",
-			pricePer: "за 100гр ",
-		},
-		{
-			src: "/img/mainDishes/fetuch.jpeg",
-			title: "Фетучині з креветками",
-			price: "250",
-		},
-		{
-			title: "Фетучині з лососем та цукіні",
-			price: "250",
-		},
-		{
-			src: "/img/mainDishes/funch.jpeg",
-			title: "Фунчоза з креветками та болгарським перцем",
-			price: "250",
-		},
-	];
-
-	const sideDishes: typesMenu[] = [
-		{
-			src: "/img/sideDishes/fri.jpeg",
-			title: "Картопля фрі",
-			description:
-				"Ідеально обсмажена картопля фрі, з нашим особливим  соусом «Барбекю».",
-			price: "90",
-		},
-		{
-			src: "/img/sideDishes/seliyanska.jpeg",
-			title: "Картопля по-селянськи",
-			description: "Картопля по-селянські із фірмовими прянощами.",
-			price: "90",
-		},
-		{
-			src: "",
-			title: "Молода картопля",
-			description: "Молода картопля із пряними травами.",
-			price: "95",
-		},
-		{
-			src: "",
-			title: "Овочі гриль",
-			description:
-				"Шампіньйони, перець ( солодкий чи болгарський ) черрі, кабачок , цибуля ",
-			price: "100",
-		},
-		{
-			src: "/img/sideDishes/corn.jpeg",
-			title: "Кукурудза на грилі",
-			description: "2 качана",
-			price: "100",
-		},
-	];
-
 	const [isZoomed, setIsZoomed] = useState(
 		new Array(mainDishes.length).fill(false)
 	);
@@ -148,9 +33,9 @@ const MainDishes = () => {
 		return () => {
 			document.removeEventListener("click", handleClickOutside);
 		};
-	}, [isZoomed, mainDishes.length]);
+	}, [isZoomed]);
 	return (
-		<div>
+		<div id="mainDishes">
 			<div className="inline-flex flex-col gap-3 md:gap-6">
 				<h3 className="sub-title-section">Основні страви</h3>
 				<p className="bg-[#243d30] inline-block font-medium mt-3 underline">
@@ -158,7 +43,7 @@ const MainDishes = () => {
 				</p>
 			</div>
 			<ul className="grid md:grid-cols-2 lg:grid-cols-4 md:mt-12 mt-7 gap-16">
-				{mainDishes.map((item, index) => (
+				{mainDishes.map((item: MenuTypes, index: number) => (
 					<li
 						className="text-center flex flex-col items-center justify-content-center "
 						key={index}
@@ -209,7 +94,7 @@ const MainDishes = () => {
 					Гарніри:
 				</h3>
 				<ul className="grid md:grid-cols-2 lg:grid-cols-4 md:mt-12 mt-7 gap-16">
-					{sideDishes?.map((item, index) => (
+					{sideDishes.map((item: MenuTypes, index: number) => (
 						<li
 							className="text-center flex flex-col items-center justify-content-center "
 							key={index}
