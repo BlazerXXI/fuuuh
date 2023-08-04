@@ -4,17 +4,18 @@ import { useEffect, useRef, useState } from "react";
 
 const Bar = () => {
 	interface barTypes {
-		src?: string;
+		src: string;
 		title: string;
-		price?: string | undefined;
-		description?: string | undefined;
+		price?: string;
+		description?: string;
 		individual?: string;
 	}
 	const popcorn: string[] = ["Солоний", "Суперсир", "Бекон"];
-	const popcornPrice: string | undefined = "100 / 150";
+	const popcornPrice: string | undefined | number = "100 / 150";
 
 	const bar: barTypes[] = [
 		{
+			src: "",
 			title: "NAME",
 			price: "359",
 		},
@@ -37,26 +38,32 @@ const Bar = () => {
 
 	const coffee: barTypes[] = [
 		{
+			src: "",
 			title: "Американо/Еспресо",
 			price: "65",
 		},
 		{
+			src: "",
 			title: "Рослинне молоко",
 			price: "+35",
 		},
 		{
+			src: "",
 			title: "Капучіно/Латте",
 			price: "75/ 85/ 95",
 		},
 		{
+			src: "",
 			title: "Флет",
 			price: "120",
 		},
 		{
+			src: "",
 			title: "Айс латте",
 			price: "120",
 		},
 		{
+			src: "",
 			title: "Какао",
 			price: "110",
 		},
