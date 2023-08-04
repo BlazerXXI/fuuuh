@@ -150,3 +150,14 @@ img {
 	height: 100%;
 }
 
+::-webkit-scrollbar {
+	width: 10px;
+	height: 10px;
+	background: transparent;
+}
+::-webkit-scrollbar-thumb {
+	background: #474c50 !important;
+}
+::-webkit-scrollbar-track {
+	background: rgba(202, 204, 206, 0.04) !important;
+}

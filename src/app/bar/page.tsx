@@ -4,10 +4,11 @@ import { useEffect, useRef, useState } from "react";
 
 const Bar = () => {
 	interface barTypes {
-		src?: string | undefined;
-		title: string | undefined;
+		src?: string;
+		title: string;
 		price?: string | undefined;
 		description?: string | undefined;
+		individual?: string;
 	}
 	const popcorn: string[] = ["Солоний", "Суперсир", "Бекон"];
 	const popcornPrice: string | undefined = "100 / 150";
@@ -77,6 +78,115 @@ const Bar = () => {
 	];
 	const teaFirmPrice: string | undefined = "150";
 
+	const cocktail: barTypes[] = [
+		{
+			src: "/img/bar/fuuuh.jpeg",
+			title: "FUUUH",
+			description: "На основі джину, кисло-солодкий з терпкістю амаретто",
+			price: "220",
+		},
+		{
+			src: "/img/bar/popcorn.jpeg",
+			title: "POPKORN",
+			description: "На основі джину, солодкий з яблучною кислинкою",
+			price: "220",
+		},
+		{
+			src: "/img/bar/satisfaction.jpeg",
+			title: "SATISFACTION",
+			description: "На основі апероль і просекко,кисло-солодкий",
+			price: "220",
+		},
+		{
+			src: "/img/bar/SPECIAL.jpeg",
+			title: "SPECIAL",
+			description: "На основі бурбону, кисло солодкий з пряністю імбиру",
+			price: "220",
+		},
+		{
+			src: "/img/bar/SICILIA.jpeg",
+			title: "SICILIA",
+			description: "На основі лимончело, кисло-солодкий з нотками яблука",
+			price: "220",
+		},
+		{
+			src: "/img/bar/COSMIC.jpeg",
+			title: "COSMIC",
+			description: "На основі джину, солодкий з нотами вишні та малини",
+			price: "220",
+		},
+		{
+			src: "/img/bar/ASTON.jpeg",
+			title: "ASTON",
+			description:
+				"На основі лимончелло і просекко, легко-кислий, але дуже освіжаючий",
+			price: "220",
+		},
+		{
+			src: "/img/bar/TROPIC.jpeg",
+			title: "TROPIC",
+			description: "На основі рому, солодкий, тропічний",
+			price: "220",
+		},
+		{
+			src: "/img/bar/SMAGY.jpeg",
+			title: "SMAGY",
+			description: "На основі джину, зі смородиною, осаіжаючий та солодкий",
+			price: "220",
+		},
+		{
+			src: "/img/bar/Milk.jpeg",
+			title: "Milk Punch",
+			description: "На основі рому, дуже м’який , з легкою кислинкою",
+			price: "220",
+		},
+		{
+			src: "/img/bar/milk-punch.jpeg",
+			title: "Milk Punch ( молочно цитрусовий)",
+			description:
+				"Пунш на основі джину з пряністю кориці та вершково-цитрусовим післясмаком",
+			price: "220",
+		},
+		{
+			src: "/img/bar/Pine.jpeg",
+			title: "Pine",
+			description:
+				"На основі віскі та сухого вермута , з солодким післясмаком ананасу",
+			price: "220",
+		},
+		{
+			src: "/img/bar/vanilla.jpeg",
+			title: "Red vanilla",
+			description: "На основі віскі та вінілі , з легкою кислинкою",
+			price: "220",
+		},
+		{
+			src: "/img/bar/honey.jpeg",
+			title: "Honey pear",
+			description: "На основі джину з медово-грушовим смаком",
+			price: "220",
+		},
+		{
+			src: "/img/bar/currant.jpeg",
+			title: "Royal currant",
+			description: "На основі смородинового джину зі смаком кисленької малини",
+			price: "220",
+		},
+		{
+			src: "/img/bar/Pie.jpeg",
+			title: "Pie drink",
+			description: "На основі джину, смак яблучного штруделю з корицею",
+			price: "220",
+		},
+		{
+			src: "/img/bar/RUSPBERRY.jpeg",
+			title: "French 75",
+			individual: "RUSPBERRY",
+			description: "На основі малинового джину та просеко, освіжаючий",
+			price: "220",
+		},
+	];
+
 	const [isZoomed, setIsZoomed] = useState(new Array(bar.length).fill(false));
 	const handleImageClick = (index: number) => {
 		setIsZoomed((prev) =>
@@ -136,7 +246,7 @@ const Bar = () => {
 					<div>
 						<h3 className="sub-title-section">Кальян 💨</h3>
 						<Image
-							className="object-cover w-full mt-4"
+							className="object-cover w-full mt-4 max-w-[780px]"
 							width={360}
 							height={350}
 							src={"/img/hookah/hookah.jpeg"}
@@ -145,7 +255,7 @@ const Bar = () => {
 						<p className=" underline mt-6">360 грн</p>
 					</div>
 					<div>
-						<h3 className="italic text-1xl font-semibold bg-gradient-to-r from-purple-500 to-yellow-500 mt-6 ">
+						<h3 className="italic w-80 text-1xl font-semibold bg-gradient-to-r from-purple-500 to-yellow-500 mt-6 ">
 							Iqos Heets
 						</h3>
 						<p className=" underline mt-6">130грн</p>
@@ -204,6 +314,39 @@ const Bar = () => {
 							))}
 						</ul>
 						<p className=" font-semibold underline mt-3">{teaFirmPrice} грн</p>
+					</div>
+					<div>
+						<div>
+							<h3 className="sub-title-section">Коктейлі фірмові 🍸</h3>
+						</div>
+						<ul className="grid md:grid-cols-2 lg:grid-cols-3 items-center justify-around gap-4 mt-16">
+							{cocktail.map((item, index) => (
+								<li
+									className="flex flex-col gap-2 w-[330px] h-[600px]"
+									key={index}
+								>
+									<h4 className="text-[#5e87c9] text-xl md:text-2xl">
+										{item.title}
+										{item.individual ? (
+											<span className="text-[#d15796]">
+												{" " + item.individual}
+											</span>
+										) : null}
+									</h4>
+									<p className="flex-auto">{item.description}</p>
+									<Image
+										className="object-cover h-[440px]"
+										src={item.src}
+										alt={item.title}
+										width={330}
+										height={440}
+									/>
+									<p className=" font-semibold text-xl underline mt-6">
+										{item.price} грн
+									</p>
+								</li>
+							))}
+						</ul>
 					</div>
 				</div>
 			</section>
