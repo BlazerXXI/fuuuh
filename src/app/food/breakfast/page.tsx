@@ -3,46 +3,8 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { breakfast } from "../../menu.json";
 import { MenuTypes } from "@/app/types";
-import { getMenuData } from "@/app/api";
 
 const Breakfast = () => {
-	const [menuData, setMenuData] = useState<{
-		breakfast: MenuTypes[];
-		snacks: MenuTypes[];
-		deserts: MenuTypes[];
-		mainDishes: MenuTypes[];
-		sideDishes: MenuTypes[];
-		salats: MenuTypes[];
-		soups: MenuTypes[];
-		popcorn: string[];
-		popcornPrice: string;
-		lemonade: string[];
-		lemonadePrice: string;
-		coffee: MenuTypes[];
-		tea: string[];
-		teaPrice: string;
-		teaFirm: string[];
-		teaFirmPrice: string;
-		cocktail: MenuTypes[];
-	}>({
-		breakfast: [],
-		snacks: [],
-		deserts: [],
-		mainDishes: [],
-		sideDishes: [],
-		salats: [],
-		soups: [],
-		popcorn: [],
-		popcornPrice: "",
-		lemonade: [],
-		lemonadePrice: "",
-		coffee: [],
-		tea: [],
-		teaPrice: "",
-		teaFirm: [],
-		teaFirmPrice: "",
-		cocktail: [],
-	});
 	const [isZoomed, setIsZoomed] = useState(
 		new Array(breakfast.length).fill(false)
 	);
@@ -54,18 +16,6 @@ const Breakfast = () => {
 	const zoomedImageRef = useRef<HTMLDivElement>(null);
 
 	useEffect(() => {
-		const fetchData = async () => {
-			try {
-				const data = await getMenuData();
-				setMenuData(data);
-			} catch (error) {
-				console.error("Ошибка при получении данных:", error);
-				null;
-			}
-		};
-
-		fetchData();
-
 		const handleClickOutside = (event: MouseEvent) => {
 			if (!event.target) return;
 			const targetElement = event.target as HTMLElement;
@@ -84,22 +34,13 @@ const Breakfast = () => {
 		};
 	}, [isZoomed]);
 
-	if (!menuData) {
-		return (
-			<p>
-				Loading..
-				<i className="duration-300 animate-ping">.</i>
-			</p>
-		);
-	}
-
 	return (
 		<div id="breakfast">
 			<div>
 				<h3 className="sub-title-section">Сніданки (весь день)</h3>
 			</div>
 			<ul className="grid md:grid-cols-2 lg:grid-cols-4 md:mt-12 mt-7 gap-16">
-				{menuData.breakfast.map((item: MenuTypes, index: number) => (
+				{breakfast.map((item: MenuTypes, index: number) => (
 					<li
 						className="text-center flex flex-col items-center justify-content-center "
 						key={index}
