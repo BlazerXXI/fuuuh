@@ -40,17 +40,27 @@ header {
 
 a {
 	transition: all 0.3s ease 0s;
-	&:hover {
-		color: #ffffff;
-		opacity: 1 !important;
-		transition: all 0.3s ease 0s;
+	@media (min-width: 640px) {
+		&:hover {
+			color: #ffffff;
+			opacity: 1 !important;
+			transition: all 0.3s ease 0s;
+		}
 	}
 	img {
 		transition: all 0.3s ease 0s;
-		&:hover {
-			opacity: 0.7;
-			transform: scale(1.1);
+		@media (min-width: 640px) {
+			&:hover {
+				opacity: 0.7;
+				transform: scale(1.1);
+				transition: all 0.3s ease 0s;
+			}
+		}
+		&:active {
+			color: #ffffff;
+			opacity: 0.7 !important;
 			transition: all 0.3s ease 0s;
+			transform: scale(0.9);
 		}
 	}
 }
