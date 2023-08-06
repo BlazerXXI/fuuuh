@@ -210,17 +210,20 @@ const Bar = () => {
 									{category.SparklingWine &&
 										category.SparklingWine[0]?.titleHeader}
 									{category.Wine && category.Wine[0]?.titleHeader}
+									{category.Vermouth && category.Vermouth[0]?.titleHeader}
 								</h3>
 							</div>
 							<ul>
-								{(category.SparklingWine || category.Wine)?.map(
-									(item, itemIndex) => (
-										<li key={itemIndex}>
-											<h4>{item.title}</h4>
-											<p>{item.price}</p>
-										</li>
-									)
-								)}
+								{(
+									category.SparklingWine ||
+									category.Wine ||
+									category.Vermouth
+								)?.map((item, itemIndex) => (
+									<li key={itemIndex}>
+										<h4>{item.title}</h4>
+										<p>{item.price}</p>
+									</li>
+								))}
 							</ul>
 						</div>
 					))}
