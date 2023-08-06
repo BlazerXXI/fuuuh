@@ -467,9 +467,242 @@
 		},
 		{
 			"Vermouth": [
-				{ "titleHeader": "Vermouth" },
-				{ "title": "Cinzano Bianco", "price": "70грн " },
-				{ "title": "Cinzano Rosso", "price": "70грн " }
+				{
+					"titleHeader": "Vermouth"
+				},
+				{
+					"title": "Cinzano Bianco",
+					"price": "70грн "
+				},
+				{
+					"title": "Cinzano Rosso",
+					"price": "70грн "
+				}
+			]
+		},
+		{
+			"ScotchWhiskey": [
+				{
+					"titleHeader": "Scotch Whiskey"
+				},
+				{
+					"title": "Johnnie Walker Red label",
+					"price": "110грн  "
+				},
+				{
+					"title": "Johnnie Walker Black label 12 YO",
+					"price": "220грн  "
+				},
+				{
+					"title": "Bell's Original",
+					"price": "85грн   "
+				},
+				{
+					"title": "Glenmorangie 10years",
+					"price": "220грн   "
+				}
+			]
+		},
+		{
+			"IrishWhiskey": [
+				{
+					"titleHeader": "Irish Whiskey"
+				},
+				{
+					"title": "O'Brian",
+					"price": "140грн  "
+				},
+				{
+					"title": "Pogues",
+					"price": "165грн  "
+				}
+			]
+		},
+		{
+			"AmericanWhiskey": [
+				{
+					"titleHeader": "American Whiskey"
+				},
+				{
+					"title": "Bulleit Bourbon",
+					"price": "145грн  "
+				},
+				{
+					"title": "Jack Daniel’s",
+					"price": "160грн  "
+				},
+				{
+					"title": "Jack Daniel’s Honey",
+					"price": "160грн  "
+				},
+				{
+					"title": "Wild Turkey Bourbon",
+					"price": "145грн  "
+				}
+			]
+		},
+		{
+			"CognacBrandy": [
+				{
+					"titleHeader": "Cognac/Brandy"
+				},
+				{
+					"title": "Hennessy VS",
+					"price": "190грн  "
+				},
+				{
+					"title": "ST-Remy VSOP",
+					"price": "95грн  "
+				}
+			]
+		},
+		{
+			"Rum": [
+				{
+					"titleHeader": "Rum"
+				},
+				{
+					"title": "Captain Morgan White Rum",
+					"price": "95грн"
+				},
+				{
+					"title": "Captain Morgan Original Spiced Gold",
+					"price": "95грн"
+				},
+				{
+					"title": "Captain Morgan Black Spiced",
+					"price": "105грн"
+				}
+			]
+		},
+		{
+			"Gin": [
+				{
+					"titleHeader": "Gin"
+				},
+				{
+					"title": "Gordon's London Dry",
+					"price": "95грн"
+				},
+				{
+					"title": "Gordon's Premium Pink",
+					"price": "95грн"
+				},
+				{
+					"title": "Whitley Neill Quince (Айва, супер вкусный, вязкий джин. Рекомендуется без тоника.)",
+					"price": "145грн"
+				},
+				{
+					"title": "Tanqueray Blackcurrant Royale",
+					"price": "115грн"
+				},
+				{
+					"title": "Haymans терновий",
+					"price": "120грн"
+				}
+			]
+		},
+		{
+			"Tequila": [
+				{
+					"titleHeader": "Tequila"
+				},
+				{
+					"title": "Текіла Jarana Blanco",
+					"price": "95грн"
+				}
+			]
+		},
+		{
+			"LiqueurBitter": [
+				{
+					"titleHeader": "Liqueur/Bitter"
+				},
+				{
+					"title": "Aperol",
+					"price": "75грн"
+				},
+				{
+					"title": "Campari",
+					"price": "95грн"
+				},
+				{
+					"title": "Jagermeister",
+					"price": "100грн"
+				},
+				{
+					"title": "Limoncello Rossi d’Asiago",
+					"price": "70грн"
+				},
+				{
+					"title": "Лікер Baileys «Salted Caramel»",
+					"price": "100грн"
+				}
+			]
+		},
+		{
+			"Vodka": [
+				{
+					"titleHeader": "Vodka"
+				},
+				{
+					"title": "Koskenkorva",
+					"price": "70грн"
+				}
+			]
+		},
+		{
+			"BottledBeer": [
+				{
+					"titleHeader": "Bottled Beer"
+				},
+				{
+					"title": "Carlsberg",
+					"price": "90грн"
+				},
+				{
+					"title": "Kronenbourg 1664 Blanc 0.46",
+					"price": "90грн"
+				}
+			]
+		},
+		{
+			"SoftDrinks": [
+				{
+					"titleHeader": "Soft drinks"
+				},
+				{
+					"title": "Coca-Cola 0.3 банка",
+					"price": "45грн"
+				},
+				{
+					"title": "Sprite 0,3 банка",
+					"price": "45грн"
+				},
+				{
+					"title": "Fanta 0,3 банка",
+					"price": "45грн"
+				},
+				{
+					"title": "Schweppes Tonic 0,3 банка",
+					"price": "45грн"
+				},
+				{
+					"title": "Morshinska Water 0,5 ml",
+					"price": "30грн"
+				},
+				{
+					"title": "Red Bull 0,25 ml",
+					"price": "90грн"
+				},
+				{
+					"title": "Juice в ассортименте 0.25",
+					"price": "40грн"
+				},
+				{
+					"title": "Coca-Cola Zero 0.25",
+					"price": "45грн"
+				}
 			]
 		}
 	]

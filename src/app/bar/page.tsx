@@ -2,6 +2,14 @@
 import Image from "next/image";
 import { BarTypes } from "@/app/types";
 import barMenuData from "@/app/menu.json";
+import {
+	ReactElement,
+	JSXElementConstructor,
+	ReactNode,
+	ReactPortal,
+	PromiseLikeOfReactNode,
+	Key,
+} from "react";
 
 const Bar = () => {
 	return (
@@ -203,30 +211,37 @@ const Bar = () => {
 							)}
 						</ul>
 					</div>
-					{barMenuData.bottledDrinks.map((category, index) => (
-						<div key={index}>
-							<div>
-								<h3 className="sub-title-section">
-									{category.SparklingWine &&
-										category.SparklingWine[0]?.titleHeader}
-									{category.Wine && category.Wine[0]?.titleHeader}
-									{category.Vermouth && category.Vermouth[0]?.titleHeader}
-								</h3>
+					{barMenuData.bottledDrinks.map((category, index) => {
+						const titleHeader = Object.values(category)[0]?.[0]?.titleHeader;
+
+						return (
+							<div key={index}>
+								<div>
+									<h3 className="sub-title-section">{titleHeader}</h3>
+								</div>
+								<ul className="flex flex-col gap-3 mt-6">
+									{Object.values(category)[0]?.map(
+										(
+											item: { title: string; price: string },
+											itemIndex: Key | null | undefined
+										) => {
+											return item.title ? (
+												<li
+													key={itemIndex}
+													className="flex justify-between items-center shadow-md shadow-[#ffffff80] px-6 py-4"
+												>
+													<h4>{item.title}</h4>
+													<p className="text-sm opacity-80 min-w-[130px]">
+														{item.price}
+													</p>
+												</li>
+											) : null;
+										}
+									)}
+								</ul>
 							</div>
-							<ul>
-								{(
-									category.SparklingWine ||
-									category.Wine ||
-									category.Vermouth
-								)?.map((item, itemIndex) => (
-									<li key={itemIndex}>
-										<h4>{item.title}</h4>
-										<p>{item.price}</p>
-									</li>
-								))}
-							</ul>
-						</div>
-					))}
+						);
+					})}
 				</div>
 			</section>
 		</>

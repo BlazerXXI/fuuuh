@@ -6,6 +6,7 @@ export interface MenuTypes {
 	pricePer?: string;
 }
 export interface BarTypes {
+	Category?: string | undefined;
 	src?: string | undefined;
 	title: string;
 	price: string | number;
