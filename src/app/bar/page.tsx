@@ -228,7 +228,7 @@ const Bar = () => {
 											return item.title ? (
 												<li
 													key={itemIndex}
-													className="flex justify-between items-center shadow-md shadow-[#ffffff80] px-6 py-4"
+													className="flex justify-between items-center shadow-md shadow-[#ffffff80] px-6 py-4 h-full flex-initial"
 												>
 													<h4>{item.title}</h4>
 													<p className="text-sm opacity-80 min-w-[130px]">
