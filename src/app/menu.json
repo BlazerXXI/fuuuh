@@ -378,6 +378,92 @@
 			"individual": "RUSPBERRY",
 			"description": "На основі малинового джину та просеко, освіжаючий",
 			"price": "220"
+		},
+		{
+			"src": "/img/bar/Bamboleo.jpeg",
+			"title": "Bamboleo",
+			"description": "На основі текіли, дуже м’який , приємний, солодкий , з яскраво-ягідним смаком",
+			"price": "220"
+		}
+	],
+	"coctailsClassic": [
+		{
+			"src": "/img/bar/Boulevardier.jpeg",
+			"title": "Boulevardier",
+			"price": "205"
+		},
+		{
+			"src": "/img/bar/Negroni.jpeg",
+			"title": "Negroni",
+			"price": "200"
+		},
+		{
+			"src": "/img/bar/Spritz.jpeg",
+			"title": "Aperol Spritz",
+			"price": "190"
+		},
+		{
+			"src": "/img/bar/Hugo.jpeg",
+			"title": "Hugo Spritz",
+			"price": "180"
+		},
+		{
+			"src": "/img/bar/MaiTai.jpeg",
+			"title": "Mai Tai",
+			"price": "205"
+		},
+		{
+			"src": "/img/bar/WhiskySour.jpeg",
+			"title": "Whisky Sour",
+			"price": "190 "
+		}
+	],
+	"bottledDrinks": [
+		{
+			"SparklingWine": [
+				{
+					"titleHeader": "Sparkling wine"
+				},
+				{
+					"title": "Serena 1881 Prosecco Frizzante DOC Treviso Італія.Біле сухе",
+					"price": "150мл - 150грн.Пляшка- 720грн."
+				},
+				{
+					"title": "Terra Fresca Spago Frizazante Італія.Біле сухе",
+					"price": "150мл - 120грн.Пляшка- 550грн."
+				},
+				{
+					"title": "San Mare Lambrusko dell`Emilia Bianco Італія     Біле/н.сол.",
+					"price": "150мл - 110грн.Пляшка- 520грн."
+				}
+			]
+		},
+		{
+			"Wine": [
+				{
+					"titleHeader": "Wine"
+				},
+				{
+					"title": "Maison Castel «Gewurztraminer». Біле н/сухе, Францiя",
+					"price": "150мл - 140грн. Пляшка- 630грн."
+				},
+				{
+					"title": "Terrazas 'Torrontes' Біле сухе, Аргентина",
+					"price": "150мл - 240грн. Пляшка- 1100грн."
+				},
+				{
+					"title": "Maison Castel «Syrah». Червоне н/сухе, Францiя",
+					"price": "150мл - 140грн. Пляшка- 620грн."
+				},
+				{
+					"title": "Sensi 'Collezione' Pinot Grigio, Veneto IGT Біле сухе",
+					"price": "150мл - 150грн. Пляшка- 650грн."
+				},
+				{
+					"title": "'Vieux Papes' Біле та червоне н/солодке",
+					"price": "150мл - 120грн. Пляшка- 550грн."
+				}
+			]
 		}
 	]
 }

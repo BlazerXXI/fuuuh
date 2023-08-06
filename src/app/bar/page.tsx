@@ -1,18 +1,7 @@
 "use client";
 import Image from "next/image";
 import { BarTypes } from "@/app/types";
-import {
-	popcorn,
-	popcornPrice,
-	lemonade,
-	lemonadePrice,
-	coffee,
-	tea,
-	teaPrice,
-	teaFirm,
-	teaFirmPrice,
-	cocktail,
-} from "@/app/menu.json";
+import barMenuData from "@/app/menu.json";
 
 const Bar = () => {
 	return (
@@ -37,12 +26,12 @@ const Bar = () => {
 							<p className="italic mt-4">Середній / Великий</p>
 						</div>
 						<ul className="flex flex-col gap-4 mt-3">
-							{popcorn.map((item: string, index: number) => (
+							{barMenuData.popcorn.map((item: string, index: number) => (
 								<li key={index}>
 									<h4 className="text-[#5e87c9] text-xl md:text-2xl">{item}</h4>
 								</li>
 							))}
-							<p className=" underline">{popcornPrice} грн</p>
+							<p className=" underline">{barMenuData.popcornPrice} грн</p>
 						</ul>
 					</div>
 					<div>
@@ -67,12 +56,12 @@ const Bar = () => {
 							<h3 className="sub-title-section">Лимонади Фууух</h3>
 						</div>
 						<ul className="flex flex-col gap-4 mt-3">
-							{lemonade.map((item: string, index: number) => (
+							{barMenuData.lemonade.map((item: string, index: number) => (
 								<li key={index}>
 									<h4 className="text-[#5e87c9] text-xl md:text-2xl">{item}</h4>
 								</li>
 							))}
-							<p className=" underline">{lemonadePrice} грн</p>
+							<p className=" underline">{barMenuData.lemonadePrice} грн</p>
 						</ul>
 					</div>
 					<div>
@@ -81,7 +70,7 @@ const Bar = () => {
 							<p className="italic">Маленька / Середня / Велика</p>
 						</div>
 						<ul className="flex flex-col gap-4 mt-3">
-							{coffee.map((item: BarTypes, index: number) => (
+							{barMenuData.coffee.map((item: BarTypes, index: number) => (
 								<li key={index}>
 									<h4 className="text-[#5e87c9] text-xl md:text-2xl">
 										{item.title}
@@ -96,33 +85,37 @@ const Bar = () => {
 							<h3 className="sub-title-section">Чаї класичні 🍵</h3>
 						</div>
 						<ul className="flex flex-col gap-4 mt-3">
-							{tea.map((item: string, index: number) => (
+							{barMenuData.tea.map((item: string, index: number) => (
 								<li key={index}>
 									<h4 className="text-[#5e87c9] text-xl md:text-2xl">{item}</h4>
 								</li>
 							))}
 						</ul>
-						<p className=" font-semibold underline mt-3">{teaPrice} грн</p>
+						<p className=" font-semibold underline mt-3">
+							{barMenuData.teaPrice} грн
+						</p>
 					</div>
 					<div>
 						<div>
 							<h3 className="sub-title-section">Чаї фірмові 🍵</h3>
 						</div>
 						<ul className="flex flex-col gap-4 mt-3">
-							{teaFirm.map((item: string, index: number) => (
+							{barMenuData.teaFirm.map((item: string, index: number) => (
 								<li key={index}>
 									<h4 className="text-[#5e87c9] text-xl md:text-2xl">{item}</h4>
 								</li>
 							))}
 						</ul>
-						<p className=" font-semibold underline mt-3">{teaFirmPrice} грн</p>
+						<p className=" font-semibold underline mt-3">
+							{barMenuData.teaFirmPrice} грн
+						</p>
 					</div>
 					<div>
 						<div>
 							<h3 className="sub-title-section">Коктейлі фірмові 🍸</h3>
 						</div>
 						<ul className="grid md:grid-cols-2 lg:grid-cols-3 items-center justify-around gap-4 mt-16">
-							{cocktail.map((item: BarTypes, index: number) => (
+							{barMenuData.cocktail.map((item: BarTypes, index: number) => (
 								<li
 									className="flex flex-col gap-2 w-[330px] h-[600px]"
 									key={index}
@@ -135,14 +128,26 @@ const Bar = () => {
 											</span>
 										) : null}
 									</h4>
-									<p className="flex-auto">{item.description}</p>
-									<Image
-										className="object-cover h-[440px]"
-										src={item.src}
-										alt={item.title}
-										width={330}
-										height={440}
-									/>
+									{item.description ? (
+										<p className="flex-auto">{item.description}</p>
+									) : null}
+									{item.src ? (
+										<Image
+											className="object-cover h-[440px]"
+											src={item.src}
+											alt={item.title}
+											width={330}
+											height={440}
+										/>
+									) : (
+										<Image
+											className="rounded-lg m-auto no-photo max-w-[330] max-h-[440]"
+											src="/img/no_photo.png"
+											width={330}
+											height={440}
+											alt="no photo"
+										/>
+									)}
 									<p className=" font-semibold text-xl underline mt-6">
 										{item.price} грн
 									</p>
@@ -150,6 +155,75 @@ const Bar = () => {
 							))}
 						</ul>
 					</div>
+					<div>
+						<div>
+							<h3 className="sub-title-section">Коктейлі класичні</h3>
+						</div>
+						<ul className="grid md:grid-cols-2 lg:grid-cols-3 items-center justify-around gap-4 mt-16">
+							{barMenuData.coctailsClassic.map(
+								(item: BarTypes, index: number) => (
+									<li
+										className="flex flex-col gap-2 w-[330px] h-[600px]"
+										key={index}
+									>
+										<h4 className="text-[#5e87c9] text-xl md:text-2xl">
+											{item.title}
+											{item.individual ? (
+												<span className="text-[#d15796]">
+													{" " + item.individual}
+												</span>
+											) : null}
+										</h4>
+										{item.description ? (
+											<p className="flex-auto">{item.description}</p>
+										) : null}
+
+										{item.src ? (
+											<Image
+												className="object-cover h-[440px]"
+												src={item.src}
+												alt={item.title}
+												width={330}
+												height={440}
+											/>
+										) : (
+											<Image
+												className="rounded-lg m-auto no-photo max-w-[330] max-h-[440]"
+												src="/img/no_photo.png"
+												width={330}
+												height={440}
+												alt="no photo"
+											/>
+										)}
+										<p className=" font-semibold text-xl underline mt-6">
+											{item.price} грн
+										</p>
+									</li>
+								)
+							)}
+						</ul>
+					</div>
+					{barMenuData.bottledDrinks.map((category, index) => (
+						<div key={index}>
+							<div>
+								<h3 className="sub-title-section">
+									{category.SparklingWine &&
+										category.SparklingWine[0]?.titleHeader}
+									{category.Wine && category.Wine[0]?.titleHeader}
+								</h3>
+							</div>
+							<ul>
+								{(category.SparklingWine || category.Wine)?.map(
+									(item, itemIndex) => (
+										<li key={itemIndex}>
+											<h4>{item.title}</h4>
+											<p>{item.price}</p>
+										</li>
+									)
+								)}
+							</ul>
+						</div>
+					))}
 				</div>
 			</section>
 		</>
