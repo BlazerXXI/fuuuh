@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import { getTheme } from "./switchTheme/page";
 
 const roboto = Roboto({
 	subsets: ["latin"],
@@ -19,9 +20,14 @@ export default function RootLayout({
 }: {
 	children: React.ReactNode;
 }) {
+	const currentTheme = getTheme();
+	const bodyClassNames = `${roboto.className} ${
+		currentTheme === "Light" ? "light" : ""
+	}`;
+
 	return (
 		<html className="container" lang="uk">
-			<body className={roboto.className}>
+			<body className={bodyClassNames}>
 				<Header />
 				<main className="container">{children}</main>
 				<Footer />
