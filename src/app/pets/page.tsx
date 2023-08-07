@@ -5,10 +5,10 @@ const Pet = () => {
 	return (
 		<section id="pet">
 			<div>
-				<h2 className="title-section"># Меню для маленьких друзів</h2>
+				<h2 className="title-section">Меню для маленьких друзів</h2>
 			</div>
 			<div>
-				<h3 className="sub-title-section"># Меню для маленьких друзів🐶</h3>
+				<h3 className="sub-title-section">Меню для маленьких друзів🐶</h3>
 			</div>
 			<ul className="grid md:grid-cols-2 lg:grid-cols-4 md:mt-12 mt-7 gap-16">
 				{pets.map((item: MenuTypes, index: number) => (
