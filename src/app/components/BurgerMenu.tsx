@@ -86,7 +86,7 @@ const BurgerMenu: React.FC<BurgerMenuProps> = () => {
 								alt="instagram"
 							/>
 						</Link>
-						<Link target="_blank" href="#">
+						<Link target="_blank" href="https://www.google.com.ua/maps/place/50.033797,+36.254528/@50.0339433,36.2545724,17z/data=!4m4!3m3!8m2!3d50.0337974!4d36.2545279?hl=ru-ua&source=lnms">
 							<Image
 								src="/img/header/social/location.svg"
 								width={24}
@@ -94,7 +94,7 @@ const BurgerMenu: React.FC<BurgerMenuProps> = () => {
 								alt="location dot"
 							/>
 						</Link>
-						<Link target="_blank" href="#">
+						<Link target="_blank" href="tel:0959416670">
 							<Image
 								src="/img/header/social/phone.svg"
 								width={24}
