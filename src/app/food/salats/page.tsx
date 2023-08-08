@@ -85,7 +85,7 @@ const Salats = () => {
 					</li>
 				))}
 			</ul>
-			<div className="bg-[#143A4E] px-5 py-4 w-[240px] mt-12 max-md:mx-auto">
+			<div className="bg-[#143A4E] px-5 py-4 w-[240px] mt-12 max-md:mx-auto addToDish">
 				<h3 className="font-semibold">Додаємо 50гр :</h3>
 				<ul className="font-normal mt-3">
 					<li className="flex justify-between ">

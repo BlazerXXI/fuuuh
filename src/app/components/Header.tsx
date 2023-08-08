@@ -34,6 +34,7 @@ const page = () => {
 				<div className="hidden md:flex gap-7">
 					<Link target="_blank" href="https://www.instagram.com/fuuuh_bar/">
 						<Image
+						className="brightness-0"
 							src="/img/header/social/instagram.svg"
 							width={24}
 							height={24}
@@ -42,6 +43,7 @@ const page = () => {
 					</Link>
 					<Link target="_blank" href="https://www.google.com.ua/maps/place/50.033797,+36.254528/@50.0339433,36.2545724,17z/data=!4m4!3m3!8m2!3d50.0337974!4d36.2545279?hl=ru-ua&source=lnms">
 						<Image
+						className="brightness-0"
 							src="/img/header/social/location.svg"
 							width={24}
 							height={24}
@@ -50,6 +52,7 @@ const page = () => {
 					</Link>
 					<Link target="_blank" href="tel:0959416670">
 						<Image
+						className="brightness-0"
 							src="/img/header/social/phone.svg"
 							width={24}
 							height={24}
