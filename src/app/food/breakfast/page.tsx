@@ -55,7 +55,7 @@ const Breakfast = () => {
 										onClick={() => handleImageClick(index)}
 										className={`rounded-lg ${
 											isZoomed[index] ? "zoomed-image" : ""
-										}`}
+										} w-auto`}
 										src={item.src}
 										alt={`блюдо` + " " + item.title}
 										width={240}
