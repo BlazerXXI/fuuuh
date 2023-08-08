@@ -4,7 +4,7 @@ import { useEffect } from "react";
 export const GetTheme = () => {
 	useEffect(() => {
 		// Функция для отслеживания изменения темы
-		const handleThemeChange = (event) => {
+		const handleThemeChange = (event: any) => {
 			console.log(event.matches ? "dark" : "light");
 		};
 
