@@ -25,7 +25,7 @@ export default function RootLayout({
 	const storedTheme = localStorage.getItem("theme");
 	const initialTheme = storedTheme !== null ? storedTheme : "light";
 
-	const [currentTheme, setCurrentTheme] = useState(initialTheme); // Начальное значение
+	const [currentTheme, setCurrentTheme] = useState(initialTheme);
 
 	useEffect(() => {
 		const darkThemeMediaQuery = window.matchMedia(
