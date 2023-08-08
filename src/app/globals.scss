@@ -16,7 +16,6 @@ body {
 		padding: 56px 15px 0px 15px;
 	}
 }
-
 body.light {
 	* {
 		color: #333333 !important;
@@ -49,7 +48,7 @@ body.light {
 		background-color: #edf3ec !important;
 	}
 	#hero img {
-		filter: brightness(.9);
+		filter: brightness(0.9);
 	}
 }
 

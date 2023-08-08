@@ -4,8 +4,8 @@ export const getTheme = () => {
 		window.matchMedia &&
 		window.matchMedia("(prefers-color-scheme: dark)").matches
 	) {
-		return "Dark";
-	} else {
 		return "Light";
+	} else {
+		return "Dark";
 	}
 };

@@ -22,10 +22,10 @@ export default function RootLayout({
 }) {
 	const currentTheme = getTheme();
 	const bodyClassNames = `${roboto.className} ${
-		currentTheme === "Light" ? "light" : ""
+		currentTheme === "Light" ? "light" : "dark"
 	}`;
 
-	return (
+	return  (
 		<html className="container" lang="uk">
 			<body className={bodyClassNames}>
 				<Header />
