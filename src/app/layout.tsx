@@ -22,11 +22,10 @@ export default function RootLayout({
 }: {
 	children: React.ReactNode;
 }) {
-	const [currentTheme, setCurrentTheme] = useState(
-		localStorage.getItem("theme") ? localStorage.getItem("theme") : "dark"
-	); // Начальное значение
+	const storedTheme = localStorage.getItem("theme");
+	const initialTheme = storedTheme !== null ? storedTheme : "light";
 
-	localStorage.setItem("theme", currentTheme);
+	const [currentTheme, setCurrentTheme] = useState(initialTheme); // Начальное значение
 
 	useEffect(() => {
 		const darkThemeMediaQuery = window.matchMedia(
@@ -41,6 +40,10 @@ export default function RootLayout({
 			darkThemeMediaQuery.removeListener(handleThemeChange);
 		};
 	}, []);
+
+	useEffect(() => {
+		localStorage.setItem("theme", currentTheme);
+	}, [currentTheme]);
 
 	const bodyClassNames = `${roboto.className} ${currentTheme}`;
 	return (
