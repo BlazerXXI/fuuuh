@@ -22,7 +22,11 @@ export default function RootLayout({
 }: {
 	children: React.ReactNode;
 }) {
-	const [currentTheme, setCurrentTheme] = useState("dark"); // Начальное значение
+	const [currentTheme, setCurrentTheme] = useState(
+		localStorage.getItem("theme") ? localStorage.getItem("theme") : "dark"
+	); // Начальное значение
+
+	localStorage.setItem("theme", currentTheme);
 
 	useEffect(() => {
 		const darkThemeMediaQuery = window.matchMedia(
