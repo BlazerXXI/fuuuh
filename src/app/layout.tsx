@@ -16,15 +16,14 @@ export const metadata: Metadata = {
 	title: "Fuuuh Bar",
 	description: "Fuuuh Bar menu",
 };
+const storedTheme = localStorage.getItem("theme");
+const initialTheme = storedTheme !== null ? storedTheme : "light";
 
 export default function RootLayout({
 	children,
 }: {
 	children: React.ReactNode;
 }) {
-	const storedTheme = localStorage.getItem("theme");
-	const initialTheme = storedTheme !== null ? storedTheme : "light";
-
 	const [currentTheme, setCurrentTheme] = useState(initialTheme);
 
 	useEffect(() => {
