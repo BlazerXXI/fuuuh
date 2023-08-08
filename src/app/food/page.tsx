@@ -12,7 +12,7 @@ const Food = () => {
 			<section id="hero">
 				<Image
 					className="object-cover w-full h-[30vh]"
-					src={"/heroBg.png"} 
+					src={"/img/hero/heroBg.png"} 
 					width={1200}
 					height={335}
 					alt="hero image"
