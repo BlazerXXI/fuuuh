@@ -31,7 +31,7 @@ export default function RootLayout({
 		const darkThemeMediaQuery = window.matchMedia(
 			"(prefers-color-scheme: dark)"
 		);
-		const handleThemeChange = (event: any) => {
+		const handleThemeChange = (event) => {
 			setCurrentTheme(event.matches ? "dark" : "light");
 		};
 		darkThemeMediaQuery.addListener(handleThemeChange);
