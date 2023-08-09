@@ -1,38 +1,40 @@
 "use client";
-/* eslint-disable @next/next/no-img-element */
 import React, { useEffect, useState } from "react";
 
 export default function SwitchTheme() {
-	const storedTheme = localStorage.getItem("theme");
+	const storedTheme =
+		typeof window !== "undefined" ? localStorage.getItem("theme") : null;
 	const initialTheme = storedTheme !== null ? storedTheme : "dark";
 
 	const [currentTheme, setCurrentTheme] = useState(initialTheme);
 
 	useEffect(() => {
-		const darkThemeMediaQuery = window.matchMedia(
-			"(prefers-color-scheme: dark)"
-		);
+		if (typeof window !== "undefined") {
+			const darkThemeMediaQuery = window.matchMedia(
+				"(prefers-color-scheme: dark)"
+			);
 
-		const handleThemeChange = (event: MediaQueryListEventInit) => {
-			if (!localStorage.getItem("handleThemeChange")) {
-				setCurrentTheme(initialTheme);
-				setCurrentTheme(event.matches ? "dark" : "light");
-			} else {
-				return null;
-			}
-		};
+			const handleThemeChange = (event: MediaQueryListEventInit) => {
+				if (!localStorage.getItem("handleThemeChange")) {
+					setCurrentTheme(event.matches ? "dark" : "light");
+				}
+			};
 
-		darkThemeMediaQuery.addListener(handleThemeChange);
-		handleThemeChange(darkThemeMediaQuery);
-		return () => {
-			darkThemeMediaQuery.removeListener(handleThemeChange);
-		};
-	}, [initialTheme]);
+			darkThemeMediaQuery.addListener(handleThemeChange);
+			handleThemeChange(darkThemeMediaQuery);
+
+			return () => {
+				darkThemeMediaQuery.removeListener(handleThemeChange);
+			};
+		}
+	}, []);
 
 	useEffect(() => {
-		localStorage.setItem("theme", currentTheme);
-		document.body.classList.remove("light", "dark");
-		document.body.classList.add(currentTheme);
+		if (typeof window !== "undefined") {
+			localStorage.setItem("theme", currentTheme);
+			document.body.classList.remove("light", "dark");
+			document.body.classList.add(currentTheme);
+		}
 	}, [currentTheme]);
 
 	function handleThemeChange() {

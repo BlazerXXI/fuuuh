@@ -1,13 +1,12 @@
 "use client";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import { mainDishes } from "../../menu.json";
-import { sideDishes } from "../../menu.json";
+import menuData from "../../menu.json";
 import { MenuTypes } from "@/app/types";
 
 const MainDishes = () => {
 	const [isZoomed, setIsZoomed] = useState(
-		new Array(mainDishes.length).fill(false)
+		new Array(menuData.mainDishes.length).fill(false)
 	);
 	const handleImageClick = (index: number) => {
 		setIsZoomed((prev) =>
@@ -24,7 +23,7 @@ const MainDishes = () => {
 				!zoomedImageRef.current?.contains(targetElement) &&
 				isZoomed.some((value) => value)
 			) {
-				setIsZoomed(new Array(mainDishes.length).fill(false));
+				setIsZoomed(new Array(menuData.mainDishes.length).fill(false));
 			}
 		};
 
@@ -43,7 +42,7 @@ const MainDishes = () => {
 				</p>
 			</div>
 			<ul className="grid md:grid-cols-2 lg:grid-cols-4 md:mt-12 mt-7 gap-16">
-				{mainDishes.map((item: MenuTypes, index: number) => (
+				{menuData.mainDishes.map((item: MenuTypes, index: number) => (
 					<li
 						className="text-center flex flex-col items-center justify-content-center "
 						key={index}
@@ -94,7 +93,7 @@ const MainDishes = () => {
 					Гарніри:
 				</h3>
 				<ul className="grid md:grid-cols-2 lg:grid-cols-4 md:mt-12 mt-7 gap-16">
-					{sideDishes.map((item: MenuTypes, index: number) => (
+					{menuData.sideDishes.map((item: MenuTypes, index: number) => (
 						<li
 							className="text-center flex flex-col items-center justify-content-center "
 							key={index}
