@@ -192,6 +192,9 @@ img {
 }
 
 body.light {
+	.text-ruspberry {
+		color: #d15796 !important;
+	}
 	.no-photo {
 		filter: invert(0);
 	}
