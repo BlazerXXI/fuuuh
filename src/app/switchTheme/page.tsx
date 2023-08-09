@@ -45,7 +45,10 @@ export default function SwitchTheme() {
 
 	return (
 		<>
-			<button onClick={handleThemeChange} className="animate-pulse opacity-80 switchTheme">
+			<button
+				onClick={handleThemeChange}
+				className="animate-pulse opacity-80 switchTheme"
+			>
 				<img
 					src={`/img/header/${imageTheme}.svg`}
 					width={19}
