@@ -275,6 +275,13 @@
 		"М’ята-маракуйя"
 	],
 	"teaFirmPrice": "150",
+	"aperetyv": [
+		{
+			"src": "/img/bar/jelly.jpeg",
+			"title": "Алкогольні желейки, на трьох видах алкоголю: бурбон, ирландський віскі та ром",
+			"price": "220"
+		}
+	],
 	"cocktail": [
 		{
 			"src": "/img/bar/fuuuh.jpeg",
