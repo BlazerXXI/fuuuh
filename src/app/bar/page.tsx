@@ -161,7 +161,7 @@ const Bar = () => {
 							{barMenuData.coctailsClassic.map(
 								(item: BarTypes, index: number) => (
 									<li
-										className="flex flex-col gap-2 w-[300px] h-[600px]  bar-animated justify-between "
+										className="flex flex-col gap-2 w-[300px] h-[600px]  bar-animated justify-between items-center text-center"
 										key={index}
 									>
 										<h4 className="text-[#5e87c9] text-xl md:text-2xl">
