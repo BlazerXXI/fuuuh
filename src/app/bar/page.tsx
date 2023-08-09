@@ -131,7 +131,7 @@ const Bar = () => {
 										{item.title}
 									</h4>
 									<Image
-										className="  mt-3 rounded-lg m-auto"
+										className="  mt-3 rounded-lg max-md:m-auto "
 										src={item.src || "default-image-url"}
 										alt={item.title}
 										width={300}
@@ -152,7 +152,7 @@ const Bar = () => {
 						<ul className="grid md:grid-cols-2 lg:grid-cols-3 items-center justify-around gap-10 mt-16">
 							{barMenuData.cocktail.map((item: BarTypes, index: number) => (
 								<li
-									className="flex flex-col gap-2 w-[300px] min-h-[650px] bar-animated justify-between items-center text-center "
+									className="flex flex-col gap-2 w-[300px] min-h-[540px] bar-animated justify-between items-center text-center m-auto"
 									key={index}
 								>
 									<h4 className="text-title text-xl md:text-2xl">
@@ -192,11 +192,11 @@ const Bar = () => {
 						<div>
 							<h3 className="sub-title-section">Коктейлі класичні</h3>
 						</div>
-						<ul className="grid md:grid-cols-2 lg:grid-cols-3 items-center justify-around gap-10 mt-16">
+						<ul className="grid md:grid-cols-2 lg:grid-cols-3 items-center justify-around text-center  gap-10 mt-16">
 							{barMenuData.coctailsClassic.map(
 								(item: BarTypes, index: number) => (
 									<li
-										className="flex flex-col gap-2 w-[300px] h-[600px]  bar-animated justify-between items-center text-center"
+										className="flex flex-col gap-2 w-[300px] h-[540px] m-auto  bar-animated justify-between items-center text-center"
 										key={index}
 									>
 										<h4 className="text-title text-xl md:text-2xl">
