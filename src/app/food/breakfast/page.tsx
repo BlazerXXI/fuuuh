@@ -1,11 +1,13 @@
 "use client";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import { breakfast } from "@/app/menu.json";
+import menuData from "@/app/menu.json";
 import { MenuTypes } from "@/app/types";
 
 const Breakfast = () => {
-	const [isZoomed, setIsZoomed] = useState(new Array(breakfast.length).fill(false));
+	const [isZoomed, setIsZoomed] = useState(
+		new Array(menuData.breakfast.length).fill(false)
+	);
 	const handleImageClick = (index: number) => {
 		setIsZoomed((prev) =>
 			prev.map((value, i) => (i === index ? !prev[i] : false))
@@ -38,7 +40,7 @@ const Breakfast = () => {
 				<h3 className="sub-title-section">Сніданки (весь день)</h3>
 			</div>
 			<ul className="grid md:grid-cols-2 lg:grid-cols-4 md:mt-12 mt-7 gap-16">
-				{breakfast.map((item: MenuTypes, index: number) => (
+				{menuData.breakfast.map((item: MenuTypes, index: number) => (
 					<li
 						className="text-center flex flex-col items-center justify-content-center "
 						key={index}

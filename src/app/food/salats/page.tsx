@@ -1,12 +1,12 @@
 "use client";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import { salats } from "../../menu.json";
+import menuData from "../../menu.json";
 import { MenuTypes } from "@/app/types";
 
 const Salats = () => {
 	const [isZoomed, setIsZoomed] = useState(
-		new Array(salats.length).fill(false)
+		new Array(menuData.salats.length).fill(false)
 	);
 	const handleImageClick = (index: number) => {
 		setIsZoomed((prev) =>
@@ -23,7 +23,7 @@ const Salats = () => {
 				!zoomedImageRef.current?.contains(targetElement) &&
 				isZoomed.some((value) => value)
 			) {
-				setIsZoomed(new Array(salats.length).fill(false));
+				setIsZoomed(new Array(menuData.salats.length).fill(false));
 			}
 		};
 
@@ -39,7 +39,7 @@ const Salats = () => {
 				<h3 className="sub-title-section">Салати</h3>
 			</div>
 			<ul className="grid md:grid-cols-2 lg:grid-cols-4 md:mt-12 mt-7 gap-16">
-				{salats.map((item: MenuTypes, index: number) => (
+				{menuData.salats.map((item: MenuTypes, index: number) => (
 					<li
 						className="text-center flex flex-col items-center justify-content-center "
 						key={index}

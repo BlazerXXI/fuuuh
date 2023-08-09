@@ -1,5 +1,5 @@
 import { MenuTypes } from "../types";
-import { pets } from "../menu.json";
+import menuData from "../menu.json";
 
 const Pet = () => {
 	return (
@@ -8,7 +8,7 @@ const Pet = () => {
 				<h2 className="title-section">Меню для маленьких друзів🐶</h2>
 			</div>
 			<ul className="grid md:grid-cols-2 lg:grid-cols-4 md:mt-12 mt-7 gap-16">
-				{pets.map((item: MenuTypes, index: number) => (
+				{menuData.pets.map((item: MenuTypes, index: number) => (
 					<li
 						className="text-center flex flex-col items-center justify-content-center "
 						key={index}

@@ -1,12 +1,12 @@
 "use client";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import { deserts } from "../../menu.json";
+import menuData from "../../menu.json";
 import { MenuTypes } from "@/app/types";
 
 const Deserts = () => {
 	const [isZoomed, setIsZoomed] = useState(
-		new Array(deserts.length).fill(false)
+		new Array(menuData.deserts.length).fill(false)
 	);
 	const handleImageClick = (index: number) => {
 		setIsZoomed((prev) =>
@@ -23,7 +23,7 @@ const Deserts = () => {
 				!zoomedImageRef.current?.contains(targetElement) &&
 				isZoomed.some((value) => value)
 			) {
-				setIsZoomed(new Array(deserts.length).fill(false));
+				setIsZoomed(new Array(menuData.deserts.length).fill(false));
 			}
 		};
 
@@ -39,7 +39,7 @@ const Deserts = () => {
 				<h3 className="sub-title-section">Десерти</h3>
 			</div>
 			<ul className="grid md:grid-cols-2 lg:grid-cols-4 md:mt-12 mt-7 gap-16">
-				{deserts.map((item: MenuTypes, index: number) => (
+				{menuData.deserts.map((item: MenuTypes, index: number) => (
 					<li
 						className="text-center flex flex-col items-center justify-content-center "
 						key={index}

@@ -2,15 +2,7 @@
 import Image from "next/image";
 import { BarTypes } from "@/app/types";
 import barMenuData from "@/app/menu.json";
-import {
-	ReactElement,
-	JSXElementConstructor,
-	ReactNode,
-	ReactPortal,
-	PromiseLikeOfReactNode,
-	Key,
-} from "react";
-
+import { Key } from "react";
 const Bar = () => {
 	return (
 		<>
@@ -122,10 +114,10 @@ const Bar = () => {
 						<div>
 							<h3 className="sub-title-section">Коктейлі фірмові 🍸</h3>
 						</div>
-						<ul className="grid md:grid-cols-2 lg:grid-cols-3 items-center justify-around gap-4 mt-16">
+						<ul className="grid md:grid-cols-2 lg:grid-cols-3 items-center justify-around gap-10 mt-16">
 							{barMenuData.cocktail.map((item: BarTypes, index: number) => (
 								<li
-									className="flex flex-col gap-2 w-[330px] h-[600px]"
+									className="flex flex-col gap-2 w-[330px] min-h-[650px] bar-animated justify-between"
 									key={index}
 								>
 									<h4 className="text-[#5e87c9] text-xl md:text-2xl">
@@ -171,7 +163,7 @@ const Bar = () => {
 							{barMenuData.coctailsClassic.map(
 								(item: BarTypes, index: number) => (
 									<li
-										className="flex flex-col gap-2 w-[330px] h-[600px]"
+										className="flex flex-col gap-2 w-[330px] h-[600px]  bar-animated justify-between "
 										key={index}
 									>
 										<h4 className="text-[#5e87c9] text-xl md:text-2xl">
@@ -228,10 +220,10 @@ const Bar = () => {
 											return item.title ? (
 												<li
 													key={itemIndex}
-													className="flex justify-between items-center shadow-md shadow-[#ffffff80] px-6 py-4 h-full flex-initial"
+													className="flex justify-between items-center shadow-md bar-animated shadow-[#ffffff80] px-6 py-4 h-full flex-initial "
 												>
-													<h4>{item.title}</h4>
-													<p className="text-sm opacity-80 min-w-[130px]">
+													<h4 className="flex justify-start">{item.title}</h4>
+													<p className="text-sm opacity-80 min-w-[130px] flex justify-end">
 														{item.price}
 													</p>
 												</li>

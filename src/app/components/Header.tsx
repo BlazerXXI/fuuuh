@@ -1,13 +1,30 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 "use client";
 import Image from "next/image";
 import Link from "next/link";
 import BurgerMenu from "./BurgerMenu";
 import SwitchTheme from "../switchTheme/page";
+import { useEffect, useState } from "react";
 
 const page = () => {
-	SwitchTheme();
+	const [isLargeScreen, setIsLargeScreen] = useState(true);
+
+	useEffect(() => {
+		const handleResize = () => {
+			setIsLargeScreen(window.innerWidth > 768);
+		};
+
+		handleResize();
+
+		window.addEventListener("resize", handleResize);
+
+		return () => {
+			window.removeEventListener("resize", handleResize);
+		};
+	}, []);
+
 	return (
-		<header className="md:py-6 py-2 text-white/80 container">
+		<header className="md:py-6 py-2 text-white/80 container z-30">
 			<div className="container flex flex-row md:gap-0 gap-5 justify-between items-center">
 				<div>
 					<Link className="hover:transform hover:scale-0" href="/">
@@ -20,7 +37,20 @@ const page = () => {
 						/>
 					</Link>
 				</div>
-				<BurgerMenu />
+				<div className="flex gap-4">
+					{/*TODO: create function searching */}
+
+					{/*<button className="opacity-80 animate-pulse">
+						<Image
+							src="/img/header/search.svg"
+							width={19}
+							height={19}
+							alt={"image"}
+						/>
+					</button> */}
+					{!isLargeScreen ? <SwitchTheme /> : null}
+					<BurgerMenu />
+				</div>
 				<nav className="hidden md:flex gap-7 text-lg items-stretch">
 					<Link href="/" className="underline">
 						Їжа
@@ -33,6 +63,7 @@ const page = () => {
 						Меню для маленьких друзів
 					</Link>
 				</nav>
+				{isLargeScreen ? <SwitchTheme /> : null}
 				<div className="hidden md:flex gap-7 soc-menu">
 					<Link target="_blank" href="https://www.instagram.com/fuuuh_bar/">
 						<Image
