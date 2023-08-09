@@ -2,8 +2,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import BurgerMenu from "./BurgerMenu";
+import SwitchTheme from "../switchTheme/page";
 
 const page = () => {
+	SwitchTheme();
 	return (
 		<header className="md:py-6 py-2 text-white/80 container">
 			<div className="container flex flex-row md:gap-0 gap-5 justify-between items-center">
@@ -40,9 +42,11 @@ const page = () => {
 							alt="instagram"
 						/>
 					</Link>
-					<Link target="_blank" href="https://www.google.com.ua/maps/place/50.033797,+36.254528/@50.0339433,36.2545724,17z/data=!4m4!3m3!8m2!3d50.0337974!4d36.2545279?hl=ru-ua&source=lnms">
+					<Link
+						target="_blank"
+						href="https://www.google.com.ua/maps/place/50.033797,+36.254528/@50.0339433,36.2545724,17z/data=!4m4!3m3!8m2!3d50.0337974!4d36.2545279?hl=ru-ua&source=lnms"
+					>
 						<Image
-					
 							src="/img/header/social/location.svg"
 							width={24}
 							height={24}
@@ -51,7 +55,6 @@ const page = () => {
 					</Link>
 					<Link target="_blank" href="tel:0959416670">
 						<Image
-						
 							src="/img/header/social/phone.svg"
 							width={24}
 							height={24}
