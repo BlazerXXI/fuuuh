@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import { breakfast } from "../../menu.json";
+import { breakfast } from "@/app/menu.json";
 import { MenuTypes } from "@/app/types";
 
 const Breakfast = () => {
