@@ -263,3 +263,18 @@ body.light {
 		box-shadow: 0px 3px 5px 0px #00000080;
 	}
 }
+.open-menu {
+	transition: all 3s ease 0s;
+	animation: slideWithRight 1.3s cubic-bezier(0.2, 0.8, 0.4, 1) forwards !important ;
+}
+
+@keyframes slideWithRight {
+	0% {
+		opacity: 0;
+		transform: translateX(1000px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateX(0) !important;
+	}
+}
