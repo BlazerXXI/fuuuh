@@ -157,7 +157,7 @@ const Bar = () => {
 						<div>
 							<h3 className="sub-title-section">Коктейлі класичні</h3>
 						</div>
-						<ul className="grid md:grid-cols-2 lg:grid-cols-3 items-center justify-around gap-4 mt-16">
+						<ul className="grid md:grid-cols-2 lg:grid-cols-3 items-center justify-around gap-10 mt-16">
 							{barMenuData.coctailsClassic.map(
 								(item: BarTypes, index: number) => (
 									<li
