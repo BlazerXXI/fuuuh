@@ -74,9 +74,7 @@ const Breakfast = () => {
 								</div>
 							)}
 							<div className="px-3 pb-4 flex flex-col z-10 grow gap-5">
-								<h4 className="text-[#5e87c9] text-xl md:text-2xl">
-									{item.title}
-								</h4>
+								<h4 className="text-title text-xl md:text-2xl">{item.title}</h4>
 								<p className="opacity-80">{item.description}</p>
 								<p className="flex flex-col grow justify-end text-2xl">
 									{item.price} грн
