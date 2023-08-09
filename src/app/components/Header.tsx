@@ -1,10 +1,28 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 "use client";
 import Image from "next/image";
 import Link from "next/link";
 import BurgerMenu from "./BurgerMenu";
 import SwitchTheme from "../switchTheme/page";
+import { useEffect, useState } from "react";
 
 const page = () => {
+	const [isLargeScreen, setIsLargeScreen] = useState(true);
+
+	useEffect(() => {
+		const handleResize = () => {
+			setIsLargeScreen(window.innerWidth > 768);
+		};
+
+		handleResize();
+
+		window.addEventListener("resize", handleResize);
+
+		return () => {
+			window.removeEventListener("resize", handleResize);
+		};
+	}, []);
+
 	return (
 		<header className="md:py-6 py-2 text-white/80 container z-30">
 			<div className="container flex flex-row md:gap-0 gap-5 justify-between items-center">
@@ -30,8 +48,7 @@ const page = () => {
 							alt={"image"}
 						/>
 					</button> */}
-
-					<SwitchTheme />
+					{!isLargeScreen ? <SwitchTheme /> : null}
 					<BurgerMenu />
 				</div>
 				<nav className="hidden md:flex gap-7 text-lg items-stretch">
@@ -46,6 +63,7 @@ const page = () => {
 						Меню для маленьких друзів
 					</Link>
 				</nav>
+				{isLargeScreen ? <SwitchTheme /> : null}
 				<div className="hidden md:flex gap-7 soc-menu">
 					<Link target="_blank" href="https://www.instagram.com/fuuuh_bar/">
 						<Image

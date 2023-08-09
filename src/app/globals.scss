@@ -16,7 +16,9 @@ body {
 		padding: 56px 15px 0px 15px;
 	}
 }
-
+*:focus-visible {
+	outline: none !important;
+}
 header {
 	position: fixed;
 	left: 50%;
@@ -194,9 +196,25 @@ img {
 	background: rgba(202, 204, 206, 0.04) !important;
 }
 
+.bar-animated {
+	animation: 3s linear infinite alternate bar-animation !important ;
+}
+
+@keyframes bar-animation {
+	0% {
+		box-shadow: 0px 3px 5px 0px #ffffff80;
+	}
+	100% {
+		box-shadow: 0px 3px 5px 0px #ffffff20;
+	}
+}
+
 body.light {
 	* {
 		color: #333333 !important;
+	}
+	.shadow-sm {
+		box-shadow: 0px 3px 5px 0px #00000020;
 	}
 	.title-section {
 		&::after {

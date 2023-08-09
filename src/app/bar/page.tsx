@@ -171,7 +171,7 @@ const Bar = () => {
 							{barMenuData.coctailsClassic.map(
 								(item: BarTypes, index: number) => (
 									<li
-										className="flex flex-col gap-2 w-[330px] h-[600px]"
+										className="flex flex-col gap-2 w-[330px] h-[600px] shadow-sm shadow-[#ffffff20] bar-animated py-4 px-3"
 										key={index}
 									>
 										<h4 className="text-[#5e87c9] text-xl md:text-2xl">
@@ -228,10 +228,10 @@ const Bar = () => {
 											return item.title ? (
 												<li
 													key={itemIndex}
-													className="flex justify-between items-center shadow-md shadow-[#ffffff80] px-6 py-4 h-full flex-initial"
+													className="flex justify-between items-center shadow-md bar-animated shadow-[#ffffff80] px-6 py-4 h-full flex-initial "
 												>
-													<h4>{item.title}</h4>
-													<p className="text-sm opacity-80 min-w-[130px]">
+													<h4 className="flex justify-start">{item.title}</h4>
+													<p className="text-sm opacity-80 min-w-[130px] flex justify-end">
 														{item.price}
 													</p>
 												</li>
