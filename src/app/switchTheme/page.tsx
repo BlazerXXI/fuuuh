@@ -1,8 +1,9 @@
 "use client";
 import React, { useEffect, useState } from "react";
 
-const SwitchTheme = () => {
-	const storedTheme = localStorage.getItem("theme");
+export default function SwitchTheme() {
+	const storedTheme =
+		typeof window !== "undefined" ? localStorage.getItem("theme") : null;
 	const initialTheme = storedTheme !== null ? storedTheme : "light";
 
 	const [currentTheme, setCurrentTheme] = useState(initialTheme);
@@ -28,12 +29,4 @@ const SwitchTheme = () => {
 		document.body.classList.remove("light", "dark");
 		document.body.classList.add(currentTheme);
 	}, [currentTheme]);
-
-	const handleThemeSwitch = () => {
-		currentTheme !== "dark"
-			? setCurrentTheme("dark")
-			: setCurrentTheme("light");
-	};
-};
-
-export default SwitchTheme;
+}
