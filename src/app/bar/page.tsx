@@ -8,7 +8,7 @@ const Bar = () => {
 		<>
 			<section id="hero">
 				<Image
-					className="rounded-lg object-cover w-full h-[30vh]"
+					className="object-cover w-full h-[30vh]"
 					src={"/img/hero/barBg.jpeg"}
 					width={1200}
 					height={335}
