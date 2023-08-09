@@ -29,9 +29,7 @@ const Bar = () => {
 							{barMenuData.popcorn.map((item: string, index: number) => {
 								return (
 									<li key={index} className="flex items-center justify-between">
-										<h4 className="text-[#405b85] text-xl md:text-2xl">
-											{item}
-										</h4>
+										<h4 className="text-title text-xl md:text-2xl">{item}</h4>
 									</li>
 								);
 							})}
@@ -43,7 +41,7 @@ const Bar = () => {
 					<div>
 						<h3 className="sub-title-section">Кальян 💨</h3>
 						<Image
-							className="object-cover w-full mt-4 max-w-[780px]"
+							className="rounded-lg object-cover w-full mt-4 max-w-[780px]"
 							width={360}
 							height={350}
 							src={"/img/hookah/hookah.jpeg"}
@@ -133,7 +131,7 @@ const Bar = () => {
 										{item.title}
 									</h4>
 									<Image
-										className=" mt-3 rounded-lg m-auto"
+										className="  mt-3 rounded-lg m-auto"
 										src={item.src || "default-image-url"}
 										alt={item.title}
 										width={300}
@@ -168,7 +166,7 @@ const Bar = () => {
 									{item.description ? <p>{item.description}</p> : null}
 									{item.src ? (
 										<Image
-											className="object-cover h-[360px]"
+											className="rounded-lg object-cover h-[360px]"
 											src={item.src}
 											alt={item.title}
 											width={300}
@@ -176,7 +174,7 @@ const Bar = () => {
 										/>
 									) : (
 										<Image
-											className="rounded-lg m-auto no-photo max-w-[300] max-h-[360]"
+											className=" rounded-lg m-auto no-photo max-w-[300] max-h-[360]"
 											src="/img/no_photo.png"
 											width={300}
 											height={360}
@@ -213,7 +211,7 @@ const Bar = () => {
 
 										{item.src ? (
 											<Image
-												className="object-cover h-[360px]"
+												className="rounded-lg object-cover h-[360px]"
 												src={item.src}
 												alt={item.title}
 												width={300}
@@ -221,7 +219,7 @@ const Bar = () => {
 											/>
 										) : (
 											<Image
-												className="rounded-lg m-auto no-photo max-w-[300] max-h-[360]"
+												className=" rounded-lg m-auto no-photo max-w-[300] max-h-[360]"
 												src="/img/no_photo.png"
 												width={300}
 												height={360}
