@@ -14,7 +14,7 @@ const Food = () => {
 					className="object-cover w-full h-[30vh]"
 					src={"/img/hero/bg-light.png"}
 					width={1200}
-				height={335}
+					height={335}
 					alt="hero image"
 				/>
 			</section>

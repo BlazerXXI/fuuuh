@@ -39,17 +39,17 @@ const Breakfast = () => {
 			<div>
 				<h3 className="sub-title-section">Сніданки (весь день)</h3>
 			</div>
-			<ul className="grid md:grid-cols-2 lg:grid-cols-4 md:mt-12 mt-7 gap-16">
+			<ul className="grid md:grid-cols-2 lg:grid-cols-3 md:mt-12 mt-7 gap-16">
 				{menuData.breakfast.map((item: MenuTypes, index: number) => (
 					<li
 						className="text-center flex flex-col items-center justify-content-center "
 						key={index}
 					>
-						<div className="w-[240px] card-border flex flex-col grow gap-5">
+						<div className="w-[300px] card-border flex flex-col grow gap-5">
 							{item.src ? (
 								<div
 									ref={zoomedImageRef}
-									className="w-[240px] h-[320px] z-20 flex flex-col align-items-center justify-center"
+									className="w-[300px] h-[360px] z-20 flex flex-col align-items-center justify-center"
 								>
 									<Image
 										onClick={() => handleImageClick(index)}
@@ -58,12 +58,12 @@ const Breakfast = () => {
 										} w-auto`}
 										src={item.src}
 										alt={`блюдо` + " " + item.title}
-										width={240}
-										height={300}
+										width={300}
+										height={360}
 									/>
 								</div>
 							) : (
-								<div className="w-[220px] h-[320px] flex flex-col align-items-center justify-center m-auto">
+								<div className="w-[220px] h-[360px] flex flex-col align-items-center justify-center m-auto">
 									<Image
 										className="rounded-lg m-auto no-photo"
 										src="/img/no_photo.png"
@@ -86,7 +86,7 @@ const Breakfast = () => {
 					</li>
 				))}
 			</ul>
-			<div className="bg-[#143A4E] px-5 py-4 w-[240px] mt-12 max-md:mx-auto addToDish">
+			<div className="bg-[#143A4E] px-5 py-4 w-[300px] mt-12 max-md:mx-auto addToDish">
 				<h3 className="font-semibold">Додаємо 50гр :</h3>
 				<ul className="font-normal mt-3">
 					<li className="flex justify-between ">

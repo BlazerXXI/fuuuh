@@ -117,34 +117,32 @@ const Bar = () => {
 						<ul className="grid md:grid-cols-2 lg:grid-cols-3 items-center justify-around gap-10 mt-16">
 							{barMenuData.cocktail.map((item: BarTypes, index: number) => (
 								<li
-									className="flex flex-col gap-2 w-[330px] min-h-[650px] bar-animated justify-between"
+									className="flex flex-col gap-2 w-[300px] min-h-[650px] bar-animated justify-between items-center text-center "
 									key={index}
 								>
 									<h4 className="text-[#5e87c9] text-xl md:text-2xl">
 										{item.title}
 										{item.individual ? (
-											<span className="text-[#d15796]">
+											<span className="text-ruspberry">
 												{" " + item.individual}
 											</span>
 										) : null}
 									</h4>
-									{item.description ? (
-										<p className="flex-auto">{item.description}</p>
-									) : null}
+									{item.description ? <p>{item.description}</p> : null}
 									{item.src ? (
 										<Image
-											className="object-cover h-[440px]"
+											className="object-cover h-[360px]"
 											src={item.src}
 											alt={item.title}
-											width={330}
-											height={440}
+											width={300}
+											height={360}
 										/>
 									) : (
 										<Image
-											className="rounded-lg m-auto no-photo max-w-[330] max-h-[440]"
+											className="rounded-lg m-auto no-photo max-w-[300] max-h-[360]"
 											src="/img/no_photo.png"
-											width={330}
-											height={440}
+											width={300}
+											height={360}
 											alt="no photo"
 										/>
 									)}
@@ -159,39 +157,37 @@ const Bar = () => {
 						<div>
 							<h3 className="sub-title-section">Коктейлі класичні</h3>
 						</div>
-						<ul className="grid md:grid-cols-2 lg:grid-cols-3 items-center justify-around gap-4 mt-16">
+						<ul className="grid md:grid-cols-2 lg:grid-cols-3 items-center justify-around gap-10 mt-16">
 							{barMenuData.coctailsClassic.map(
 								(item: BarTypes, index: number) => (
 									<li
-										className="flex flex-col gap-2 w-[330px] h-[600px]  bar-animated justify-between "
+										className="flex flex-col gap-2 w-[300px] h-[600px]  bar-animated justify-between items-center text-center"
 										key={index}
 									>
 										<h4 className="text-[#5e87c9] text-xl md:text-2xl">
 											{item.title}
 											{item.individual ? (
-												<span className="text-[#d15796]">
+												<span className="text-ruspberry">
 													{" " + item.individual}
 												</span>
 											) : null}
 										</h4>
-										{item.description ? (
-											<p className="flex-auto">{item.description}</p>
-										) : null}
+										{item.description ? <p>{item.description}</p> : null}
 
 										{item.src ? (
 											<Image
-												className="object-cover h-[440px]"
+												className="object-cover h-[360px]"
 												src={item.src}
 												alt={item.title}
-												width={330}
-												height={440}
+												width={300}
+												height={360}
 											/>
 										) : (
 											<Image
-												className="rounded-lg m-auto no-photo max-w-[330] max-h-[440]"
+												className="rounded-lg m-auto no-photo max-w-[300] max-h-[360]"
 												src="/img/no_photo.png"
-												width={330}
-												height={440}
+												width={300}
+												height={360}
 												alt="no photo"
 											/>
 										)}
