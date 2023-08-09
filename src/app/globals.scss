@@ -128,9 +128,12 @@ a {
 	}
 }
 
-@media (max-width: 768px) {
-	.zoomed-image {
-		transform: scale(1.5);
+.zoomed-image {
+	@media (min-width: 340px) {
+		transform: scale(1.1);
+	}
+	@media (min-width: 400px) {
+		transform: scale(1.3);
 	}
 }
 .zoomed-image::after {
@@ -148,6 +151,7 @@ a {
 .no-photo {
 	width: 220px;
 	height: 220px;
+	filter: invert(1);
 }
 
 img {
@@ -188,6 +192,9 @@ img {
 }
 
 body.light {
+	.no-photo {
+		filter: invert(0);
+	}
 	.bar-animated {
 		animation: 3s ease-in-out infinite alternate bar-animation-light !important ;
 	}
