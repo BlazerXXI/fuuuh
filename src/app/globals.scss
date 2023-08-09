@@ -210,8 +210,14 @@ img {
 	background-position: bottom;
 	background-size: 6px 2px;
 }
+.text-title {
+	color: #73a9ff !important;
+}
 
 body.light {
+	.text-title {
+		color: #003a91 !important;
+	}
 	.white-text {
 		color: #f5f5f5 !important;
 	}

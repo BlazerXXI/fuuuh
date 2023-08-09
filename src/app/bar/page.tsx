@@ -29,7 +29,7 @@ const Bar = () => {
 							{barMenuData.popcorn.map((item: string, index: number) => {
 								return (
 									<li key={index} className="flex items-center justify-between">
-										<h4 className="text-[#5e87c9] text-xl md:text-2xl">
+										<h4 className="text-[#405b85] text-xl md:text-2xl">
 											{item}
 										</h4>
 									</li>
@@ -64,7 +64,7 @@ const Bar = () => {
 						<ul className="flex flex-col gap-4 mt-3">
 							{barMenuData.lemonade.map((item: string, index: number) => (
 								<li key={index}>
-									<h4 className="text-[#5e87c9] text-xl md:text-2xl">{item}</h4>
+									<h4 className="text-title text-xl md:text-2xl">{item}</h4>
 								</li>
 							))}
 							<p className="  font-semibold text-xl underline mt-6">
@@ -80,7 +80,7 @@ const Bar = () => {
 						<ul className="flex flex-col gap-4 mt-3">
 							{barMenuData.coffee.map((item: BarTypes, index: number) => (
 								<li key={index}>
-									<h4 className="text-[#5e87c9] text-xl md:text-2xl">
+									<h4 className="text-title text-xl md:text-2xl">
 										{item.title}
 									</h4>
 									<p className="  font-semibold text-xl underline mt-6">
@@ -97,7 +97,7 @@ const Bar = () => {
 						<ul className="flex flex-col gap-4 mt-3">
 							{barMenuData.tea.map((item: string, index: number) => (
 								<li key={index}>
-									<h4 className="text-[#5e87c9] text-xl md:text-2xl">{item}</h4>
+									<h4 className="text-title text-xl md:text-2xl">{item}</h4>
 								</li>
 							))}
 						</ul>
@@ -112,7 +112,7 @@ const Bar = () => {
 						<ul className="flex flex-col gap-4 mt-3">
 							{barMenuData.teaFirm.map((item: string, index: number) => (
 								<li key={index}>
-									<h4 className="text-[#5e87c9] text-xl md:text-2xl">{item}</h4>
+									<h4 className="text-title text-xl md:text-2xl">{item}</h4>
 								</li>
 							))}
 						</ul>
@@ -130,7 +130,7 @@ const Bar = () => {
 									className="flex flex-col gap-2 w-[300px] min-h-[650px] bar-animated justify-between items-center text-center "
 									key={index}
 								>
-									<h4 className="text-[#5e87c9] text-xl md:text-2xl">
+									<h4 className="text-title text-xl md:text-2xl">
 										{item.title}
 										{item.individual ? (
 											<span className="text-ruspberry">
@@ -174,7 +174,7 @@ const Bar = () => {
 										className="flex flex-col gap-2 w-[300px] h-[600px]  bar-animated justify-between items-center text-center"
 										key={index}
 									>
-										<h4 className="text-[#5e87c9] text-xl md:text-2xl">
+										<h4 className="text-title text-xl md:text-2xl">
 											{item.title}
 											{item.individual ? (
 												<span className="text-ruspberry">

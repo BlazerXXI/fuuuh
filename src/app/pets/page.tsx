@@ -15,7 +15,7 @@ const Pet = () => {
 					>
 						<div className="w-[300px] card-border flex flex-col grow gap-5">
 							<div className="px-3 py-4 flex flex-col grow gap-5">
-								<h4 className="text-[#5e87c9]">{item.title}</h4>
+								<h4 className="text-title">{item.title}</h4>
 								<p className="opacity-80">{item.description}</p>
 								<p className="flex flex-col grow justify-end">{item.price}</p>
 							</div>
