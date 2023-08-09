@@ -1,5 +1,5 @@
-/* eslint-disable @next/next/no-img-element */
 "use client";
+/* eslint-disable @next/next/no-img-element */
 import React, { useEffect, useState } from "react";
 
 export default function SwitchTheme() {
@@ -27,7 +27,7 @@ export default function SwitchTheme() {
 		return () => {
 			darkThemeMediaQuery.removeListener(handleThemeChange);
 		};
-	}, []);
+	}, [initialTheme]);
 
 	useEffect(() => {
 		localStorage.setItem("theme", currentTheme);

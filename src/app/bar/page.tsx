@@ -2,14 +2,7 @@
 import Image from "next/image";
 import { BarTypes } from "@/app/types";
 import barMenuData from "@/app/menu.json";
-import {
-	ReactElement,
-	JSXElementConstructor,
-	ReactNode,
-	ReactPortal,
-	PromiseLikeOfReactNode,
-	Key,
-} from "react";
+import { Key } from "react";
 
 const Bar = () => {
 	return (
