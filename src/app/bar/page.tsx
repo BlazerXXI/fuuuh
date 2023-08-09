@@ -31,7 +31,9 @@ const Bar = () => {
 									<h4 className="text-[#5e87c9] text-xl md:text-2xl">{item}</h4>
 								</li>
 							))}
-							<p className=" underline">{barMenuData.popcornPrice} грн</p>
+							<p className="  font-semibold text-xl underline mt-6">
+								{barMenuData.popcornPrice} грн
+							</p>
 						</ul>
 					</div>
 					<div>
@@ -43,13 +45,13 @@ const Bar = () => {
 							src={"/img/hookah/hookah.jpeg"}
 							alt={"hookah"}
 						></Image>
-						<p className=" underline mt-6">360 грн</p>
+						<p className="  font-semibold text-xl underline mt-6">360 грн</p>
 					</div>
 					<div>
-						<h3 className="italic w-80 text-1xl font-semibold bg-gradient-to-r from-purple-500 to-yellow-500 mt-6 ">
+						<h3 className="italic w-80 text-1xl font-semibold bg-gradient-to-r from-purple-500 to-yellow-500 mt-6 white-text">
 							Iqos Heets
 						</h3>
-						<p className=" underline mt-6">130грн</p>
+						<p className="  font-semibold text-xl underline mt-6">130грн</p>
 					</div>
 					<div>
 						<div>
@@ -61,7 +63,9 @@ const Bar = () => {
 									<h4 className="text-[#5e87c9] text-xl md:text-2xl">{item}</h4>
 								</li>
 							))}
-							<p className=" underline">{barMenuData.lemonadePrice} грн</p>
+							<p className="  font-semibold text-xl underline mt-6">
+								{barMenuData.lemonadePrice} грн
+							</p>
 						</ul>
 					</div>
 					<div>
@@ -75,7 +79,9 @@ const Bar = () => {
 									<h4 className="text-[#5e87c9] text-xl md:text-2xl">
 										{item.title}
 									</h4>
-									<p className=" font-semibold">{item.price} грн</p>
+									<p className="  font-semibold text-xl underline mt-6">
+										{item.price} грн
+									</p>
 								</li>
 							))}
 						</ul>
@@ -91,7 +97,7 @@ const Bar = () => {
 								</li>
 							))}
 						</ul>
-						<p className=" font-semibold underline mt-3">
+						<p className="  font-semibold text-xl underline  mt-3">
 							{barMenuData.teaPrice} грн
 						</p>
 					</div>
@@ -106,7 +112,7 @@ const Bar = () => {
 								</li>
 							))}
 						</ul>
-						<p className=" font-semibold underline mt-3">
+						<p className="  font-semibold text-xl underline mt-3">
 							{barMenuData.teaFirmPrice} грн
 						</p>
 					</div>
@@ -146,7 +152,7 @@ const Bar = () => {
 											alt="no photo"
 										/>
 									)}
-									<p className=" font-semibold text-xl underline mt-6">
+									<p className="  font-semibold text-xl underline  mt-6">
 										{item.price} грн
 									</p>
 								</li>
