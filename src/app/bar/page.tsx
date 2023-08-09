@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { BarTypes } from "@/app/types";
+import { BarTypes, MenuTypes } from "@/app/types";
 import barMenuData from "@/app/menu.json";
 import { Key } from "react";
 const Bar = () => {
@@ -120,6 +120,33 @@ const Bar = () => {
 							{barMenuData.teaFirmPrice} грн
 						</p>
 					</div>
+					<div>
+						<div>
+							<h3 className=" text-[#D15796] font-semibold text-2xl mt-6">
+								Аперетив 😉
+							</h3>
+						</div>
+						<ul className="flex flex-col gap-4 mt-3 ">
+							{barMenuData.aperetyv.map((item: BarTypes, index: number) => (
+								<li key={index}>
+									<h4 className="text-title text-xl md:text-2xl">
+										{item.title}
+									</h4>
+									<Image
+										className=" mt-3 rounded-lg m-auto"
+										src={item.src || "default-image-url"}
+										alt={item.title}
+										width={300}
+										height={360}
+									/>
+									<p className="font-semibold text-xl underline mt-3">
+										{item.price} грн
+									</p>
+								</li>
+							))}
+						</ul>
+					</div>
+
 					<div>
 						<div>
 							<h3 className="sub-title-section">Коктейлі фірмові 🍸</h3>

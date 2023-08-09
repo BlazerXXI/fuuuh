@@ -7,7 +7,6 @@ body {
 	color: #ffffffcf;
 	font-size: 16px;
 }
-
 body {
 	background-color: #191919;
 	color: #ffffffcf;
@@ -214,7 +213,11 @@ img {
 	color: #73a9ff !important;
 }
 
+// light theme
 body.light {
+	.text-\[\#D15796\] {
+		color: #d15796 !important;
+	}
 	.text-title {
 		color: #003a91 !important;
 	}
