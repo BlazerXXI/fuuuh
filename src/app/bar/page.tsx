@@ -26,11 +26,15 @@ const Bar = () => {
 							<p className="italic mt-4">Середній / Великий</p>
 						</div>
 						<ul className="flex flex-col gap-4 mt-3">
-							{barMenuData.popcorn.map((item: string, index: number) => (
-								<li key={index}>
-									<h4 className="text-[#5e87c9] text-xl md:text-2xl">{item}</h4>
-								</li>
-							))}
+							{barMenuData.popcorn.map((item: string, index: number) => {
+								return (
+									<li key={index} className="flex items-center justify-between">
+										<h4 className="text-[#5e87c9] text-xl md:text-2xl">
+											{item}
+										</h4>
+									</li>
+								);
+							})}
 							<p className="  font-semibold text-xl underline mt-6">
 								{barMenuData.popcornPrice} грн
 							</p>
