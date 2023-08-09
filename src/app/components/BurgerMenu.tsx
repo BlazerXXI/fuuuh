@@ -62,7 +62,13 @@ const BurgerMenu: React.FC<BurgerMenuProps> = () => {
 			</button>
 
 			{isOpen && (
-				<div className="absolute flex flex-col menuBlock gap-7 top-14 right-0 z-10 bg-[#191919f0] p-4 shadow-lg">
+				<div
+					className={
+						"absolute flex flex-col menuBlock gap-7 top-14 right-0 z-10 bg-[#191919f0] p-4 shadow-lg" +
+						" " +
+						`${isOpen ? "open-menu" : undefined}`
+					}
+				>
 					<nav
 						onClick={toggleMenu}
 						className="flex flex-col gap-7 text-lg items-stretch"
