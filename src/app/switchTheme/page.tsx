@@ -1,10 +1,10 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 import React, { useEffect, useState } from "react";
 
 export default function SwitchTheme() {
-	const storedTheme =
-		typeof window !== "undefined" ? localStorage.getItem("theme") : null;
-	const initialTheme = storedTheme !== null ? storedTheme : "light";
+	const storedTheme = localStorage.getItem("theme");
+	const initialTheme = storedTheme !== null ? storedTheme : "dark";
 
 	const [currentTheme, setCurrentTheme] = useState(initialTheme);
 
@@ -14,7 +14,12 @@ export default function SwitchTheme() {
 		);
 
 		const handleThemeChange = (event: MediaQueryListEventInit) => {
-			setCurrentTheme(event.matches ? "dark" : "light");
+			if (!localStorage.getItem("handleThemeChange")) {
+				setCurrentTheme(initialTheme);
+				setCurrentTheme(event.matches ? "dark" : "light");
+			} else {
+				return null;
+			}
 		};
 
 		darkThemeMediaQuery.addListener(handleThemeChange);
@@ -29,4 +34,25 @@ export default function SwitchTheme() {
 		document.body.classList.remove("light", "dark");
 		document.body.classList.add(currentTheme);
 	}, [currentTheme]);
+
+	function handleThemeChange() {
+		if (!["light", "dark"].includes(currentTheme)) return;
+		setCurrentTheme((prevState) => (prevState === "dark" ? "light" : "dark"));
+
+		localStorage.setItem("handleThemeChange", "true");
+	}
+	const imageTheme = currentTheme !== "dark" ? "sun" : "moon";
+
+	return (
+		<>
+			<button onClick={handleThemeChange} className="animate-pulse opacity-80">
+				<img
+					src={`/img/header/${imageTheme}.svg`}
+					width={19}
+					height={19}
+					alt="image moon sun"
+				/>
+			</button>
+		</>
+	);
 }

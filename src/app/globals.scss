@@ -198,6 +198,11 @@ body.light {
 	* {
 		color: #333333 !important;
 	}
+	.title-section {
+		&::after {
+			background: #00000015;
+		}
+	}
 	.sub-title-section {
 		color: #f5f5f5 !important;
 		background: #aa4338f0;

@@ -5,9 +5,8 @@ import BurgerMenu from "./BurgerMenu";
 import SwitchTheme from "../switchTheme/page";
 
 const page = () => {
-	SwitchTheme();
 	return (
-		<header className="md:py-6 py-2 text-white/80 container">
+		<header className="md:py-6 py-2 text-white/80 container z-30">
 			<div className="container flex flex-row md:gap-0 gap-5 justify-between items-center">
 				<div>
 					<Link className="hover:transform hover:scale-0" href="/">
@@ -20,7 +19,21 @@ const page = () => {
 						/>
 					</Link>
 				</div>
-				<BurgerMenu />
+				<div className="flex gap-4">
+					{/*TODO: create function searching */}
+
+					{/*<button className="opacity-80 animate-pulse">
+						<Image
+							src="/img/header/search.svg"
+							width={19}
+							height={19}
+							alt={"image"}
+						/>
+					</button> */}
+
+					<SwitchTheme />
+					<BurgerMenu />
+				</div>
 				<nav className="hidden md:flex gap-7 text-lg items-stretch">
 					<Link href="/" className="underline">
 						Їжа
