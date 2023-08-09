@@ -33,7 +33,7 @@ const page = () => {
 						Меню для маленьких друзів
 					</Link>
 				</nav>
-				<div className="hidden md:flex gap-7">
+				<div className="hidden md:flex gap-7 soc-menu">
 					<Link target="_blank" href="https://www.instagram.com/fuuuh_bar/">
 						<Image
 							src="/img/header/social/instagram.svg"

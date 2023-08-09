@@ -1,13 +1,11 @@
 "use client";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import { breakfast } from "../../menu.json";
+import { breakfast } from "@/app/menu.json";
 import { MenuTypes } from "@/app/types";
 
 const Breakfast = () => {
-	const [isZoomed, setIsZoomed] = useState(
-		new Array(breakfast.length).fill(false)
-	);
+	const [isZoomed, setIsZoomed] = useState(new Array(breakfast.length).fill(false));
 	const handleImageClick = (index: number) => {
 		setIsZoomed((prev) =>
 			prev.map((value, i) => (i === index ? !prev[i] : false))
@@ -23,7 +21,7 @@ const Breakfast = () => {
 				!zoomedImageRef.current?.contains(targetElement) &&
 				isZoomed.some((value) => value)
 			) {
-				setIsZoomed(new Array(breakfast.length).fill(false));
+				setIsZoomed(new Array(length).fill(false));
 			}
 		};
 
