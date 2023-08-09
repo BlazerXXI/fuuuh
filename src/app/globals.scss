@@ -264,8 +264,7 @@ body.light {
 	}
 }
 .open-menu {
-	transition: all 0.3s ease 0s;
-	animation: slideWithRight 1.3s cubic-bezier(0.2, 0.8, 0.4, 1) forwards !important ;
+	animation: slideWithRight 0.6s cubic-bezier(0.2, 0.8, 0.4, 1) forwards !important ;
 }
 
 @keyframes slideWithRight {
