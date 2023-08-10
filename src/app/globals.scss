@@ -104,7 +104,10 @@ a {
 .sub-title-section {
 	font-size: 30px;
 	font-weight: 600;
-	background: #522e2a;
+	background: rgb(56 123 170 / 64%) !important;
+	width: 100%;
+	justify-content: center;
+	padding: 10px;
 	display: inline-flex;
 	margin-top: 40px;
 	@media (max-width: 768px) {
@@ -181,10 +184,10 @@ img {
 	border-radius: 8px;
 	animation: 3s ease-in-out infinite alternate bar-animation !important ;
 	box-shadow: 0px 3px 5px 0px #ffffff80;
-	padding-top: 15px;
-	padding-bottom: 15px;
-	padding-left: 8px;
-	padding-right: 8px;
+	padding-top: 1.25rem;
+	padding-bottom: 1.25rem;
+	padding-left: 1rem;
+	padding-right: 1rem;
 }
 
 @keyframes bar-animation {
@@ -298,7 +301,10 @@ body.light {
 	}
 	.sub-title-section {
 		color: #ffffff !important;
-		background: #aa4338f0;
+		background: rgb(56 123 170 / 94%) !important;
+		width: 100%;
+		justify-content: center;
+		padding: 10px;
 	}
 	background-color: #f5f5f5 !important;
 	header {
