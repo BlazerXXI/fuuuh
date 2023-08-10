@@ -8,7 +8,6 @@ export default function SwitchTheme() {
 	const initialTheme = storedTheme !== null ? storedTheme : "light";
 
 	const [currentTheme, setCurrentTheme] = useState(initialTheme);
-	const imageTheme = currentTheme === "dark" ? "sun" : "moon";
 
 	useEffect(() => {
 		if (typeof window !== "undefined") {
@@ -53,10 +52,10 @@ export default function SwitchTheme() {
 				className="animate-pulse opacity-80 switchTheme"
 			>
 				<Image
-					src={`/img/header/${imageTheme}.svg`}
+					src={`/img/header/${currentTheme === "dark" ? "sun" : "moon"}.svg`}
 					width={19}
 					height={19}
-					alt={imageTheme}
+					alt={currentTheme === "dark" ? "sun" : "moon"}
 				/>
 			</button>
 		</>
