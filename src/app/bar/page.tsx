@@ -28,14 +28,17 @@ const Bar = () => {
 						<ul className="flex flex-col gap-4 mt-3">
 							{barMenuData.popcorn.map((item: string, index: number) => {
 								return (
-									<li key={index} className="flex items-center justify-between">
+									<li
+										key={index}
+										className="flex items-baseline justify-between"
+									>
 										<h4 className="text-title text-xl md:text-2xl">{item}</h4>
+										<p className="  font-semibold text-xl underline mt-6">
+											{barMenuData.popcornPrice} грн
+										</p>
 									</li>
 								);
 							})}
-							<p className="  font-semibold text-xl underline mt-6">
-								{barMenuData.popcornPrice} грн
-							</p>
 						</ul>
 					</div>
 					<div>
@@ -47,9 +50,24 @@ const Bar = () => {
 							src={"/img/hookah/hookah.jpeg"}
 							alt={"hookah"}
 						></Image>
-						<p className="  font-semibold text-xl underline mt-6">360 грн</p>
+						<div className="flex justify-between">
+							<p className="  font-semibold text-xl underline mt-6">
+								класичний
+							</p>
+							<span className="font-semibold text-xl underline mt-6">
+								360грн
+							</span>
+						</div>
+						<div className="flex justify-between">
+							<p className="  font-semibold text-xl underline mt-6">
+								Zodiac преміум табак
+							</p>
+							<span className="font-semibold text-xl underline mt-6">
+								380грн
+							</span>
+						</div>
 					</div>
-					<div>
+					<div className="flex justify-between">
 						<h3 className="italic inline-flex px-10 text-1xl font-semibold bg-gradient-to-r from-purple-500 to-yellow-500 mt-6 white-text">
 							Iqos Heets
 						</h3>
@@ -61,23 +79,23 @@ const Bar = () => {
 						</div>
 						<ul className="flex flex-col gap-4 mt-3">
 							{barMenuData.lemonade.map((item: string, index: number) => (
-								<li key={index}>
+								<li key={index} className="flex justify-between items-baseline">
 									<h4 className="text-title text-xl md:text-2xl">{item}</h4>
+									<p className="  font-semibold text-xl underline mt-6">
+										{barMenuData.lemonadePrice} грн
+									</p>
 								</li>
 							))}
-							<p className="  font-semibold text-xl underline mt-6">
-								{barMenuData.lemonadePrice} грн
-							</p>
 						</ul>
 					</div>
 					<div>
 						<div>
 							<h3 className="sub-title-section">Кава ☕️</h3>
-							<p className="italic">Маленька / Середня / Велика</p>
+							<p className="italic mt-4">Маленька / Середня / Велика</p>
 						</div>
 						<ul className="flex flex-col gap-4 mt-3">
 							{barMenuData.coffee.map((item: BarTypes, index: number) => (
-								<li key={index}>
+								<li className="flex justify-between items-baseline" key={index}>
 									<h4 className="text-title text-xl md:text-2xl">
 										{item.title}
 									</h4>
@@ -94,14 +112,14 @@ const Bar = () => {
 						</div>
 						<ul className="flex flex-col gap-4 mt-3">
 							{barMenuData.tea.map((item: string, index: number) => (
-								<li key={index}>
+								<li className="flex justify-between items-baseline" key={index}>
 									<h4 className="text-title text-xl md:text-2xl">{item}</h4>
+									<p className="  font-semibold text-xl underline  mt-3">
+										{barMenuData.teaPrice} грн
+									</p>
 								</li>
 							))}
 						</ul>
-						<p className="  font-semibold text-xl underline  mt-3">
-							{barMenuData.teaPrice} грн
-						</p>
 					</div>
 					<div>
 						<div>
@@ -109,14 +127,14 @@ const Bar = () => {
 						</div>
 						<ul className="flex flex-col gap-4 mt-3">
 							{barMenuData.teaFirm.map((item: string, index: number) => (
-								<li key={index}>
+								<li className="flex justify-between items-baseline" key={index}>
 									<h4 className="text-title text-xl md:text-2xl">{item}</h4>
+									<p className="  font-semibold text-xl underline mt-3">
+										{barMenuData.teaFirmPrice} грн
+									</p>
 								</li>
 							))}
 						</ul>
-						<p className="  font-semibold text-xl underline mt-3">
-							{barMenuData.teaFirmPrice} грн
-						</p>
 					</div>
 					<div>
 						<div>
@@ -131,7 +149,7 @@ const Bar = () => {
 										{item.title}
 									</h4>
 									<Image
-										className="  mt-3 rounded-lg max-md:m-auto "
+										className=" rounded-lg max-md:m-auto mt-4 pt-4"
 										src={item.src || "default-image-url"}
 										alt={item.title}
 										width={300}
