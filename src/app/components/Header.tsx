@@ -53,7 +53,7 @@ const page = () => {
 						Меню для маленьких друзів
 					</Link>
 				</nav>
-				{isLargeScreen ? <SwitchTheme /> : null}
+				{!isLargeScreen ? null : <SwitchTheme />}
 				<div className="hidden md:flex gap-7 soc-menu">
 					<Link target="_blank" href="https://www.instagram.com/fuuuh_bar/">
 						<Image
