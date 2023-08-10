@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { BarTypes, MenuTypes } from "@/app/types";
+import { BarTypes } from "@/app/types";
 import barMenuData from "@/app/menu.json";
 import { Key } from "react";
 const Bar = () => {
@@ -50,22 +50,16 @@ const Bar = () => {
 							src={"/img/hookah/hookah.jpeg"}
 							alt={"hookah"}
 						></Image>
-						<div className="flex justify-between">
-							<p className="  font-semibold text-xl underline mt-6">
-								класичний
-							</p>
-							<span className="font-semibold text-xl underline mt-6">
-								360грн
-							</span>
-						</div>
-						<div className="flex justify-between">
-							<p className="  font-semibold text-xl underline mt-6">
-								Zodiac преміум табак
-							</p>
-							<span className="font-semibold text-xl underline mt-6">
-								380грн
-							</span>
-						</div>
+						<ul>
+							{barMenuData.hookah.map((item: BarTypes, index: number) => (
+								<li key={index} className="flex justify-between">
+									<p className="  font-semibold text-xl mt-6">{item.title}</p>
+									<span className="font-semibold text-xl underline mt-6">
+										{item.price} грн
+									</span>
+								</li>
+							))}
+						</ul>
 					</div>
 					<div className="flex justify-between">
 						<h3 className="italic inline-flex px-10 text-1xl font-semibold bg-gradient-to-r from-purple-500 to-yellow-500 mt-6 white-text">
