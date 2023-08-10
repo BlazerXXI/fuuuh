@@ -244,11 +244,6 @@ body.dark {
 		}
 	}
 }
-.mainCards {
-	&:hover {
-		transform: scale(1.1);
-	}
-}
 
 // light theme
 body.light {
@@ -392,13 +387,26 @@ body {
 	display: flex !important;
 	justify-content: center;
 	transition: all 0.3s ease 0s;
+	box-shadow: 0px 1px 10px 0px #ffffff60;
+	animation: mainCardsFloatingAnimation 1.8s ease-in-out infinite alternate;
 	&:hover {
 		transition: all 0.3s ease 0s;
 		opacity: 0.6;
 	}
 	&:active {
-		opacity: 0.7 !important;
+		opacity: 0.8 !important;
 		transition: all 0.3s ease 0s;
 		transform: scale(0.9);
+	}
+}
+
+@keyframes mainCardsFloatingAnimation {
+	from {
+		box-shadow: 0px 1px 5px 0px #ffffff10;
+		transform: translateY(0);
+	}
+	to {
+		box-shadow: 0px 1px 10px 0px #ffffff60;
+		transform: translateY(-2px);
 	}
 }
