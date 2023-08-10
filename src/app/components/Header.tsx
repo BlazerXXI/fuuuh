@@ -38,16 +38,6 @@ const page = () => {
 					</Link>
 				</div>
 				<div className="flex gap-4">
-					{/*TODO: create function searching */}
-
-					{/*<button className="opacity-80 animate-pulse">
-						<Image
-							src="/img/header/search.svg"
-							width={19}
-							height={19}
-							alt={"image"}
-						/>
-					</button> */}
 					{!isLargeScreen ? <SwitchTheme /> : null}
 					<BurgerMenu />
 				</div>

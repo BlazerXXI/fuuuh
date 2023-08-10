@@ -50,10 +50,10 @@ const Bar = () => {
 						<p className="  font-semibold text-xl underline mt-6">360 грн</p>
 					</div>
 					<div>
-						<h3 className="italic w-80 text-1xl font-semibold bg-gradient-to-r from-purple-500 to-yellow-500 mt-6 white-text">
+						<h3 className="italic inline-flex px-10 text-1xl font-semibold bg-gradient-to-r from-purple-500 to-yellow-500 mt-6 white-text">
 							Iqos Heets
 						</h3>
-						<p className="  font-semibold text-xl underline mt-6">130грн</p>
+						<p className="font-semibold text-xl underline mt-6">130грн</p>
 					</div>
 					<div>
 						<div>
