@@ -42,7 +42,7 @@ const page = () => {
 					<BurgerMenu />
 				</div>
 				<nav className="hidden md:flex gap-7 text-lg items-stretch">
-					<Link href="/" className="underline">
+					<Link href="/foood" className="underline">
 						Їжа
 					</Link>
 					<Link href="/bar" className="flex flex-col underline">
