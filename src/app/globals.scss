@@ -239,6 +239,10 @@ img {
 	}
 }
 body.dark {
+	footer {
+		background-color: rgba(255, 255, 255, 0.05) !important;
+		border-top: 1px solid rgba(255, 255, 255, 0.2) !important;
+	}
 	.mainPage {
 		.title-main-menu {
 			font-family: "Caveat", cursive;
@@ -372,6 +376,8 @@ footer {
 	margin-right: -15px;
 	padding-bottom: 50px;
 	font-size: 17px;
+	background-color: rgba(0, 0, 0, 5%) !important;
+	border-top: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 body {
