@@ -4,15 +4,12 @@ import "./globals.scss";
 import Image from "next/image";
 
 const page = () => {
-	const currentTime = new Date().getHours();
-	const isDaytime = currentTime >= 6 && currentTime < 18;
 	return (
 		<section className="mainPage min-h-[100vh] pt-[-56px] flex flex-col justify-start items-center text-center gap-10">
 			<div className="mb-4">
 				<h3 className="text-white text-xl font-bold mt mt-4">
-					{isDaytime ? "Добрий день" : "Добрий вечір"}
+					Вас вітає Фууух Бар
 				</h3>
-				<p className="text-sm opacity-75 mt-2">Вас вітає Фууух Бар</p>
 			</div>
 			<div className="mt-4 rounded-lg h-[20vh] min-w-[320px] mainCards ">
 				<Link className="relative" href={"/food"}>
