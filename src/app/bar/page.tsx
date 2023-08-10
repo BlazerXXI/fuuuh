@@ -54,8 +54,7 @@ const Bar = () => {
 							{barMenuData.hookah.map((item: BarTypes, index: number) => (
 								<li key={index} className="flex justify-between">
 									<p className="text-title font-semibold text-xl mt-6">
-										{item.title}{" "}
-										<sup className="sup">{item.description}</sup>
+										{item.title} <sup className="sup">{item.description}</sup>
 									</p>
 									<span className="font-semibold text-xl underline mt-6">
 										{item.price} грн
