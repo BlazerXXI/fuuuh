@@ -17,7 +17,7 @@ const page = () => {
 				<Link className="relative" href={"/food"}>
 					<Image
 						className=" object-cover rounded-md m-auto w-[100vw] filter brightness-75 transition-all duration-300"
-						src={"/../public/img/salats/more.jpeg"}
+						src={"/img/salats/more.jpeg"}
 						alt={"food"}
 						width={320}
 						height={140}
@@ -35,7 +35,7 @@ const page = () => {
 				<Link className="relative" href={"/bar"}>
 					<Image
 						className=" object-cover rounded-md m-auto w-[100vw] filter brightness-75 transition-all duration-300"
-						src={"/../public/img/fuuuhbg.jpeg"}
+						src={"/img/fuuuhbg.jpeg"}
 						alt={"food"}
 						width={320}
 						height={140}
@@ -53,7 +53,7 @@ const page = () => {
 				<Link className="relative" href={"/pets"}>
 					<Image
 						className=" object-cover rounded-md m-auto w-[100vw] filter brightness-75 transition-all duration-300"
-						src={"/../public/img/dog.jpg"}
+						src={"/img/dog.jpg"}
 						alt={"food"}
 						width={320}
 						height={140}
