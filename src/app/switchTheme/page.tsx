@@ -1,4 +1,3 @@
-"use client";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 
@@ -6,8 +5,8 @@ export default function SwitchTheme() {
 	const storedTheme =
 		typeof window !== "undefined" ? localStorage.getItem("theme") : null;
 	const initialTheme = storedTheme !== null ? storedTheme : "light";
-
 	const [currentTheme, setCurrentTheme] = useState(initialTheme);
+	const iconWithTheme = currentTheme === "dark" ? "sun" : "moon";
 
 	useEffect(() => {
 		if (typeof window !== "undefined") {
@@ -52,10 +51,10 @@ export default function SwitchTheme() {
 				className="animate-pulse opacity-80 switchTheme"
 			>
 				<Image
-					src={`/img/header/${currentTheme === "dark" ? "sun" : "moon"}.svg`}
+					src={`/img/header/${iconWithTheme}.svg`}
 					width={19}
 					height={19}
-					alt={currentTheme === "dark" ? "sun" : "moon"}
+					alt={iconWithTheme}
 				/>
 			</button>
 		</>
