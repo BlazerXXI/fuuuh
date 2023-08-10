@@ -23,7 +23,7 @@ const Header = () => {
 	}, []);
 
 	return (
-		<header className="md:py-6 py-2 text-white/80 container z-30">
+		<header className="md:py-6 py-2 text-white/80 container z-30 border-b border-white/20">
 			<div className="container flex flex-row md:gap-0 gap-5 justify-between items-center">
 				<div>
 					<Link className="hover:transform hover:scale-0" href="/">
@@ -41,7 +41,7 @@ const Header = () => {
 					<BurgerMenu />
 				</div>
 				<nav className="hidden md:flex gap-7 text-lg items-stretch">
-					<Link href="/foood" className="underline">
+					<Link href="/food" className="underline">
 						Їжа
 					</Link>
 					<Link href="/bar" className="flex flex-col underline">

@@ -222,6 +222,7 @@ img {
 }
 .menuBlock {
 	font-weight: 600;
+	border-radius: 8px;
 }
 .mainPage {
 	.title-main-menu {
@@ -243,10 +244,17 @@ body.dark {
 			text-shadow: 0px 3px 5px #ffffff40 !important;
 		}
 	}
+	.sup {
+		color: rgb(255, 255, 0) !important;
+	}
 }
 
 // light theme
 body.light {
+	.border-white\/20,
+	.menuBlock {
+		border-color: rgba(0, 0, 0, 0.2);
+	}
 	.text-title {
 		color: #003a91 !important;
 	}
