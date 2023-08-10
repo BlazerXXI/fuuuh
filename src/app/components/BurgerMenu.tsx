@@ -73,7 +73,7 @@ const BurgerMenu: React.FC<BurgerMenuProps> = () => {
 						onClick={toggleMenu}
 						className="flex flex-col gap-7 text-lg items-stretch"
 					>
-						<Link href="/" className="underline">
+						<Link href="/food" className="underline">
 							Їжа
 						</Link>
 						<Link href="/bar" className="flex flex-col underline">

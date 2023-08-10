@@ -358,11 +358,17 @@ body {
 	}
 }
 
-.animationMainMenu,
-.animationMainMenu h2 {
-	transition: all 0.6s ease-in-out 0s;
-}
-
-.animationMainMenu {
-	box-shadow: 0px 3px 5px 0px #ffffff10;
+.mainCards {
+	display: flex !important;
+	justify-content: center;
+	transition: all 0.3s ease 0s;
+	&:hover {
+		transition: all 0.3s ease 0s;
+		opacity: 0.6;
+	}
+	&:active {
+		opacity: 0.7 !important;
+		transition: all 0.3s ease 0s;
+		transform: scale(0.9);
+	}
 }
