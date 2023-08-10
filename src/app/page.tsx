@@ -7,7 +7,7 @@ const page = () => {
 	const currentTime = new Date().getHours();
 	const isDaytime = currentTime >= 6 && currentTime < 18;
 	return (
-		<section className="mainPage min-h-[100vh] pt-[-56px] flex flex-col justify-start items-center text-center gap-6">
+		<section className="mainPage min-h-[100vh]  flex flex-col justify-start items-center text-center gap-6">
 			<div className="mb-4 uppercase flex flex-col gap-2">
 				<h3 className="text-lg opacity-75 font-bold mt mt-4 flex flex-col">
 					{isDaytime ? "Добрий день" : "Добрий вечір"}
