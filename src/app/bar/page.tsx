@@ -53,7 +53,9 @@ const Bar = () => {
 						<ul>
 							{barMenuData.hookah.map((item: BarTypes, index: number) => (
 								<li key={index} className="flex justify-between">
-									<p className="  font-semibold text-xl mt-6">{item.title}</p>
+									<p className="text-title font-semibold text-xl mt-6">
+										{item.title}
+									</p>
 									<span className="font-semibold text-xl underline mt-6">
 										{item.price} грн
 									</span>
@@ -62,7 +64,7 @@ const Bar = () => {
 						</ul>
 					</div>
 					<div className="flex justify-between">
-						<h3 className="italic inline-flex px-10 text-1xl font-semibold bg-gradient-to-r from-purple-500 to-yellow-500 mt-6 white-text">
+						<h3 className="italic items-center inline-flex px-10 text-1xl font-semibold bg-gradient-to-r from-purple-500 to-yellow-500 mt-6 white-text">
 							Iqos Heets
 						</h3>
 						<p className="font-semibold text-xl underline mt-6">130грн</p>

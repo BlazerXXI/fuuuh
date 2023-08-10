@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/rules-of-hooks */
 "use client";
 import Image from "next/image";
 import Link from "next/link";
@@ -6,7 +5,7 @@ import BurgerMenu from "./BurgerMenu";
 import SwitchTheme from "../switchTheme/page";
 import { useEffect, useState } from "react";
 
-const page = () => {
+const Header = () => {
 	const [isLargeScreen, setIsLargeScreen] = useState(true);
 
 	useEffect(() => {
@@ -53,7 +52,7 @@ const page = () => {
 						Меню для маленьких друзів
 					</Link>
 				</nav>
-				{!isLargeScreen ? null : <SwitchTheme />}
+				{isLargeScreen ? <SwitchTheme /> : null}
 				<div className="hidden md:flex gap-7 soc-menu">
 					<Link target="_blank" href="https://www.instagram.com/fuuuh_bar/">
 						<Image
@@ -88,4 +87,4 @@ const page = () => {
 	);
 };
 
-export default page;
+export default Header;
