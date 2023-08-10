@@ -110,6 +110,7 @@ a {
 	padding: 10px;
 	display: inline-flex;
 	margin-top: 40px;
+	border-radius: 8px;
 	@media (max-width: 768px) {
 		font-size: 24px;
 	}
@@ -242,6 +243,10 @@ img {
 	}
 }
 body.dark {
+	.sub-title-section {
+		box-shadow: 0px 3px 15px 0px #ffffff40;
+	}
+
 	footer {
 		background-color: rgba(255, 255, 255, 0.05) !important;
 		border-top: 1px solid rgba(255, 255, 255, 0.2) !important;
@@ -259,6 +264,10 @@ body.dark {
 
 // light theme
 body.light {
+	.sub-title-section {
+		box-shadow: 0px 3px 15px 0px rgba(0, 0, 0, 0.2);
+	}
+
 	.border-white\/20,
 	.menuBlock {
 		border-color: rgba(0, 0, 0, 0.2);
