@@ -5,9 +5,10 @@ import React, { useEffect, useState } from "react";
 export default function SwitchTheme() {
 	const storedTheme =
 		typeof window !== "undefined" ? localStorage.getItem("theme") : null;
-	const initialTheme = storedTheme !== null ? storedTheme : "dark";
+	const initialTheme = storedTheme !== null ? storedTheme : "light";
 
 	const [currentTheme, setCurrentTheme] = useState(initialTheme);
+	const imageTheme = currentTheme === "dark" ? "sun" : "moon";
 
 	useEffect(() => {
 		if (typeof window !== "undefined") {
@@ -44,7 +45,6 @@ export default function SwitchTheme() {
 
 		localStorage.setItem("handleThemeChange", "true");
 	}
-	const imageTheme = currentTheme == "dark" ? "sun" : "moon";
 
 	return (
 		<>
@@ -56,7 +56,7 @@ export default function SwitchTheme() {
 					src={`/img/header/${imageTheme}.svg`}
 					width={19}
 					height={19}
-					alt="image moon sun"
+					alt={imageTheme}
 				/>
 			</button>
 		</>
