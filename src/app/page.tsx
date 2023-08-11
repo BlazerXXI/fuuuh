@@ -42,7 +42,7 @@ const page = () => {
 					<Image
 						className=" object-cover rounded-md m-auto w-[100vw] filter brightness-75 animateBait transition-all duration-300"
 						src={"/img/fuuuhbg.jpeg"}
-						alt={"food"}
+						alt={"fuuuh bar"}
 						width={320}
 						height={140}
 					></Image>
@@ -60,7 +60,7 @@ const page = () => {
 					<Image
 						className=" object-cover rounded-md m-auto w-[100vw] filter brightness-75 animateBait transition-all duration-300"
 						src={"/img/dog.jpg"}
-						alt={"food"}
+						alt={"dog pets"}
 						width={320}
 						height={140}
 					></Image>
