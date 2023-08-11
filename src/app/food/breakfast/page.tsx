@@ -1,38 +1,34 @@
 "use client";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import menuData from "@/app/menu.json";
+import { getMenuData } from "@/app/api";
 import { MenuTypes } from "@/app/types";
 
 const Breakfast = () => {
-	const [isZoomed, setIsZoomed] = useState(
-		new Array(menuData.breakfast.length).fill(false)
-	);
+	const [isZoomed, setIsZoomed] = useState<boolean[]>([]);
 	const handleImageClick = (index: number) => {
 		setIsZoomed((prev) =>
 			prev.map((value, i) => (i === index ? !prev[i] : false))
 		);
 	};
-	const zoomedImageRef = useRef<HTMLDivElement>(null);
 
+	const [menuData, setMenuData] = useState<MenuTypes[]>([]);
 	useEffect(() => {
-		const handleClickOutside = (event: MouseEvent) => {
-			if (!event.target) return;
-			const targetElement = event.target as HTMLElement;
-			if (
-				!zoomedImageRef.current?.contains(targetElement) &&
-				isZoomed.some((value) => value)
-			) {
-				setIsZoomed(new Array(length).fill(false));
+		const fetchData = async () => {
+			try {
+				const data = await getMenuData();
+				if (data && data.breakfast) {
+					setMenuData(data.breakfast);
+					setIsZoomed(new Array(data.breakfast.length).fill(false));
+				}
+			} catch (error) {
+				console.error("Ошибка при получении данных:", error);
 			}
 		};
+		fetchData();
+	}, []);
 
-		document.addEventListener("click", handleClickOutside);
-
-		return () => {
-			document.removeEventListener("click", handleClickOutside);
-		};
-	}, [isZoomed]);
+	const zoomedImageRef = useRef<HTMLDivElement>(null);
 
 	return (
 		<div id="breakfast">
@@ -40,7 +36,7 @@ const Breakfast = () => {
 				<h3 className="sub-title-section">Сніданки (весь день)</h3>
 			</div>
 			<ul className="grid md:grid-cols-2 lg:grid-cols-3 md:mt-12 mt-7 gap-16">
-				{menuData.breakfast.map((item: MenuTypes, index: number) => (
+				{menuData.map((item: MenuTypes, index: number) => (
 					<li
 						className="text-center flex flex-col items-center justify-content-center "
 						key={index}
@@ -57,7 +53,7 @@ const Breakfast = () => {
 											isZoomed[index] ? "zoomed-image" : ""
 										} w-auto`}
 										src={item.src}
-										alt={`блюдо` + " " + item.title}
+										alt={`блюдо ${item.title}`}
 										width={300}
 										height={360}
 									/>
@@ -87,8 +83,7 @@ const Breakfast = () => {
 			<div className="bg-[#143A4E] px-5 py-4 w-[300px] mt-12 max-md:mx-auto addToDish">
 				<h3 className="font-semibold">Додаємо 50гр :</h3>
 				<ul className="font-normal mt-3">
-					<li className="flex justify-between ">
-						{" "}
+					<li className="flex justify-between">
 						<span>Курочка</span> 45грн
 					</li>
 					<li className="flex justify-between mt-1">
