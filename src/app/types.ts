@@ -1,4 +1,9 @@
+export interface MenuHeader {
+	food: MenuTypes[];
+}
+
 export interface MenuTypes {
+	header: string;
 	src?: string | undefined;
 	title: string;
 	description?: string;

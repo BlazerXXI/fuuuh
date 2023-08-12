@@ -23,11 +23,6 @@ const Food = () => {
 					<h2 className="title-section">Їжа</h2>
 				</div>
 				<Breakfast />
-				<Snacks />
-				<Soups />
-				<Salats />
-				<MainDishes />
-				<Deserts />
 			</section>
 		</>
 	);

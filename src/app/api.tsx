@@ -1,11 +1,10 @@
 "use client";
 import axios from "axios";
-import { MenuTypes } from "@/app/types";
-import { useEffect, useState } from "react";
+import { MenuHeader, MenuTypes } from "./types";
 
-export const getMenuData = async (): Promise<{
-	breakfast: MenuTypes[];
-} | null> => {
+export const getMenuData = async (): Promise<
+	MenuTypes & MenuHeader | null
+> => {
 	try {
 		const apiKey = "AIzaSyCe9FJlOD7CDAEc2eqUCKWHs73rhKmN44w";
 		const fileId = "1_o6qpr7vMVsEppekrmpNS8xwBJJtnv-P";

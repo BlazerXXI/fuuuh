@@ -1,45 +1,47 @@
 "use client";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import menuData from "../../menu.json";
 import { MenuTypes } from "@/app/types";
+import { getMenuData } from "@/app/api";
 
 const Snacks = () => {
-	const [isZoomed, setIsZoomed] = useState(
-		new Array(menuData.snacks.length).fill(false)
-	);
+	const [isZoomed, setIsZoomed] = useState<boolean[]>([]);
+	const [menuData, setMenuData] = useState<MenuTypes[]>([]);
+
 	const handleImageClick = (index: number) => {
 		setIsZoomed((prev) =>
 			prev.map((value, i) => (i === index ? !prev[i] : false))
 		);
 	};
-	const zoomedImageRef = useRef<HTMLDivElement>(null);
 
 	useEffect(() => {
-		const handleClickOutside = (event: MouseEvent) => {
-			if (!event.target) return;
-			const targetElement = event.target as HTMLElement;
-			if (
-				!zoomedImageRef.current?.contains(targetElement) &&
-				isZoomed.some((value) => value)
-			) {
-				setIsZoomed(new Array(menuData.snacks.length).fill(false));
+		const fetchData = async () => {
+			try {
+				const data = await getMenuData();
+				if (data && data.snacks) {
+					setMenuData(data.snacks);
+					setIsZoomed(new Array(data.snacks.length).fill(false));
+				}
+			} catch (error) {
+				console.error("Ошибка при получении данных:", error);
 			}
 		};
+		fetchData();
+	}, []);
 
-		document.addEventListener("click", handleClickOutside);
+	const zoomedImageRef = useRef<HTMLDivElement>(null);
 
-		return () => {
-			document.removeEventListener("click", handleClickOutside);
-		};
-	}, [isZoomed]);
+	if (!menuData || menuData.length === 0) {
+		return null;
+	}
+
 	return (
 		<div id="snacks">
 			<div>
 				<h3 className="sub-title-section">Закуски</h3>
 			</div>
 			<ul className="grid md:grid-cols-2 lg:grid-cols-3 md:mt-12 mt-7 gap-16">
-				{menuData.snacks.map((item: MenuTypes, index: number) => (
+				{menuData.map((item: MenuTypes, index: number) => (
 					<li
 						className="text-center flex flex-col items-center justify-content-center "
 						key={index}
@@ -73,9 +75,7 @@ const Snacks = () => {
 								</div>
 							)}
 							<div className="px-3 pb-4 flex flex-col z-10 grow gap-5">
-								<h4 className="text-title text-xl md:text-2xl">
-									{item.title}
-								</h4>
+								<h4 className="text-title text-xl md:text-2xl">{item.title}</h4>
 								<p className="opacity-80">{item.description}</p>
 								<p className="flex flex-col grow justify-end text-2xl">
 									{item.price} грн
