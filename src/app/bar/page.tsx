@@ -145,7 +145,7 @@ const Bar = () => {
 										{item.title}
 									</h4>
 									<Image
-										className=" rounded-lg max-md:m-auto mt-4 pt-4"
+										className=" rounded-lg max-md:m-auto mt-4 pt-4 h-[360px] object-cover"
 										src={item.src || "default-image-url"}
 										alt={item.title}
 										width={300}

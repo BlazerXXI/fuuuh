@@ -104,9 +104,13 @@ a {
 .sub-title-section {
 	font-size: 30px;
 	font-weight: 600;
-	background: #522e2a;
+	background: rgb(56 123 170 / 64%) !important;
+	width: 100%;
+	justify-content: center;
+	padding: 10px;
 	display: inline-flex;
 	margin-top: 40px;
+	border-radius: 8px;
 	@media (max-width: 768px) {
 		font-size: 24px;
 	}
@@ -181,10 +185,10 @@ img {
 	border-radius: 8px;
 	animation: 3s ease-in-out infinite alternate bar-animation !important ;
 	box-shadow: 0px 3px 5px 0px #ffffff80;
-	padding-top: 15px;
-	padding-bottom: 15px;
-	padding-left: 8px;
-	padding-right: 8px;
+	padding-top: 1.25rem;
+	padding-bottom: 1.25rem;
+	padding-left: 1rem;
+	padding-right: 1rem;
 }
 
 @keyframes bar-animation {
@@ -239,6 +243,14 @@ img {
 	}
 }
 body.dark {
+	.sub-title-section {
+		box-shadow: 0px 3px 15px 0px #ffffff40;
+	}
+
+	footer {
+		background-color: rgba(255, 255, 255, 0.05) !important;
+		border-top: 1px solid rgba(255, 255, 255, 0.2) !important;
+	}
 	.mainPage {
 		.title-main-menu {
 			font-family: "Caveat", cursive;
@@ -252,6 +264,10 @@ body.dark {
 
 // light theme
 body.light {
+	.sub-title-section {
+		box-shadow: 0px 3px 15px 0px rgba(0, 0, 0, 0.2);
+	}
+
 	.border-white\/20,
 	.menuBlock {
 		border-color: rgba(0, 0, 0, 0.2);
@@ -294,7 +310,10 @@ body.light {
 	}
 	.sub-title-section {
 		color: #ffffff !important;
-		background: #aa4338f0;
+		background: rgb(56 123 170 / 94%) !important;
+		width: 100%;
+		justify-content: center;
+		padding: 10px;
 	}
 	background-color: #f5f5f5 !important;
 	header {
@@ -372,6 +391,8 @@ footer {
 	margin-right: -15px;
 	padding-bottom: 50px;
 	font-size: 17px;
+	background-color: rgba(0, 0, 0, 5%) !important;
+	border-top: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 body {
